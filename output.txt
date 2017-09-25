@@ -1,0 +1,395 @@
+************************************
+URL: 000webhost.com
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 055firenze.it
+CATEGORY: News_and_Media
+it
+************************************
+URL: 0calc.com
+CATEGORY: Science
+en
+************************************
+URL: 1-x-bet.com
+CATEGORY: Gambling
+es
+************************************
+URL: 1000ps.at
+CATEGORY: Autos_and_Vehicles
+en
+************************************
+URL: 1001salles.com
+CATEGORY: Pets_and_Animals
+fr
+************************************
+URL: 10bet.com
+CATEGORY: Gambling
+en
+************************************
+URL: 1100ad.com
+CATEGORY: Books_and_Literature
+en
+************************************
+URL: 112-magazin.de
+CATEGORY: News_and_Media
+de
+************************************
+URL: 118118.com
+CATEGORY: Reference
+en
+************************************
+URL: 123vidz.com
+CATEGORY: Arts_and_Entertainment
+en
+************************************
+URL: 1800contacts.com
+CATEGORY: Health
+en
+************************************
+URL: 188bet.com
+CATEGORY: Gambling
+en
+************************************
+URL: 1ilac.com
+CATEGORY: Reference
+tr
+************************************
+URL: 1st4immigration.com
+CATEGORY: Law_and_Government
+en
+************************************
+URL: 1x-bet.com
+CATEGORY: Gambling
+es
+************************************
+URL: 20000-names.com
+CATEGORY: Reference
+en
+************************************
+URL: 2016dvlottery.com
+CATEGORY: Law_and_Government
+en
+************************************
+URL: 20jack.net
+CATEGORY: Adult
+en
+************************************
+URL: 21grandcasinos.com
+CATEGORY: Gambling
+es
+************************************
+URL: 21st.com
+CATEGORY: Finance
+en
+************************************
+URL: 247sudoku.com
+CATEGORY: Games
+en
+************************************
+URL: 24day0am.com
+CATEGORY: Shopping
+en
+************************************
+URL: 24hourcampfire.com
+CATEGORY: Recreation_and_Hobbies
+en
+************************************
+URL: 24petwatch.com
+CATEGORY: Pets_and_Animals
+en
+************************************
+URL: 2beeg.com
+CATEGORY: Adult
+es
+************************************
+URL: 2paintminiatures.com
+CATEGORY: Recreation_and_Hobbies
+en
+************************************
+URL: 2raw4tv.com
+CATEGORY: Adult
+en
+************************************
+URL: 3000.tv
+CATEGORY: Arts_and_Entertainment
+es
+************************************
+URL: 365chess.com
+CATEGORY: Games
+en
+************************************
+URL: 3663cateringequipment.com
+CATEGORY: Shopping
+en
+************************************
+URL: 3ayezakol.com
+CATEGORY: Food_and_Drink
+cs
+************************************
+URL: 3houralcohol.com
+CATEGORY: Food_and_Drink
+en
+************************************
+URL: 3milliondogs.com
+CATEGORY: Pets_and_Animals
+en
+************************************
+URL: 3rdmilclassrooms.com
+CATEGORY: Career_and_Education
+en
+************************************
+URL: 3reef.com
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 3run.co.uk
+CATEGORY: Sports
+en
+************************************
+URL: 4-designer.com
+CATEGORY: Arts_and_Entertainment
+en
+************************************
+URL: 40kforums.com
+CATEGORY: Games
+en
+************************************
+URL: 40kings.de
+CATEGORY: Games
+de
+************************************
+URL: 411-spyware.com
+CATEGORY: Computer_and_Electronics
+en
+************************************
+URL: 411.info
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 4223.com
+CATEGORY: Games
+en
+************************************
+URL: 4club.com
+CATEGORY: Sports
+en
+************************************
+URL: 4kmoviesclub.com
+CATEGORY: Arts_and_Entertainment
+en
+************************************
+URL: 4noggins.com
+CATEGORY: Recreation_and_Hobbies
+en
+************************************
+URL: 4sound.se
+CATEGORY: Shopping
+sv
+************************************
+URL: 4wheeloffroad.com
+CATEGORY: Autos_and_Vehicles
+en
+************************************
+URL: 50style.pl
+CATEGORY: Shopping
+pl
+************************************
+URL: 5starvidz.com
+CATEGORY: Arts_and_Entertainment
+en
+************************************
+URL: 6177.info
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 7apps.me
+CATEGORY: Computer_and_Electronics
+en
+************************************
+URL: 7dayvegan.com
+CATEGORY: Business_and_Industry
+en
+************************************
+URL: 7search.com
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 877flynola.com
+CATEGORY: Career_and_Education
+en
+************************************
+URL: 888casino.de
+CATEGORY: Gambling
+es
+************************************
+URL: 888casino.es
+CATEGORY: Gambling
+es
+************************************
+URL: 888casino.it
+CATEGORY: Gambling
+es
+************************************
+URL: 888sport.es
+CATEGORY: Gambling
+es
+************************************
+URL: 8reader.com
+CATEGORY: Books_and_Literature
+en
+************************************
+URL: 8theme.com
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 90minut.pl
+CATEGORY: Sports
+pl
+************************************
+URL: 98ia.com
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: 99designs.com
+CATEGORY: Arts_and_Entertainment
+en
+************************************
+URL: 9l.pl
+CATEGORY: Games
+pl
+************************************
+URL: a-levelchemistry.co.uk
+CATEGORY: Science
+en
+************************************
+URL: a-parents-decision.co.uk
+CATEGORY: Health
+en
+************************************
+URL: a2zwholesale.co.uk
+CATEGORY: Shopping
+en
+************************************
+URL: a4papersize.org
+CATEGORY: Books_and_Literature
+en
+************************************
+URL: aaascholarships.org
+CATEGORY: Career_and_Education
+en
+************************************
+URL: aabeacon.com
+CATEGORY: Internet_and_Telecom
+en
+************************************
+URL: aacc.org
+CATEGORY: Health
+en
+************************************
+URL: aaccnet.org
+CATEGORY: Science
+en
+************************************
+URL: aacrjournals.org
+CATEGORY: Health
+en
+************************************
+URL: aah.co.uk
+CATEGORY: Health
+en
+************************************
+URL: aanda.org
+CATEGORY: Science
+en
+************************************
+URL: aao.org
+CATEGORY: Health
+en
+************************************
+URL: aapd.org
+CATEGORY: Health
+en
+************************************
+URL: aapm.org
+CATEGORY: Health
+en
+************************************
+URL: aasarchitecture.com
+CATEGORY: Arts_and_Entertainment
+en
+************************************
+URL: aasha-online.com
+CATEGORY: People_and_Society
+en
+************************************
+URL: aauw.org
+CATEGORY: People_and_Society
+en
+************************************
+URL: ab.com
+CATEGORY: Business_and_Industry
+en
+************************************
+URL: abanka.si
+CATEGORY: Finance
+sl
+************************************
+URL: abb.com
+CATEGORY: Business_and_Industry
+en
+************************************
+URL: abbreviations.com
+CATEGORY: Reference
+en
+************************************
+URL: abcam.com
+CATEGORY: Health
+en
+************************************
+URL: abcnatation.fr
+CATEGORY: Sports
+fr
+************************************
+URL: abczdrowie.pl
+CATEGORY: Health
+pl
+************************************
+URL: abetterfuel.com
+CATEGORY: Autos_and_Vehicles
+en
+************************************
+URL: abhinav.com
+CATEGORY: Law_and_Government
+en
+************************************
+URL: abort73.com
+CATEGORY: Books_and_Literature
+en
+************************************
+URL: absolu-modelisme.com
+CATEGORY: Recreation_and_Hobbies
+fr
+************************************
+URL: abstractfonts.com
+CATEGORY: Computer_and_Electronics
+en
+************************************
+URL: abz.cz
+CATEGORY: Internet_and_Telecom
+cs
+************************************
+URL: academia-abm.com
+CATEGORY: Career_and_Education
+es
+************************************
+URL: acaloriecounter.com
+CATEGORY: Business_and_Industry
+en
+************************************
+URL: acc.org
+CATEGORY: Health
+en
+************************************
+URL: acceptableanswers.com
+CATEGORY: Finance
