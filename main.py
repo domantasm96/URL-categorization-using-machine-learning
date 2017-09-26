@@ -1,12 +1,16 @@
 import datetime
-from urllib.request import urlopen
 import csv
 import nltk
+import numpy as np
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from langdetect import detect
 
+
 # nltk.download('punk')
-file = '/home/domantas/Desktop/Erasmus/MachineLearning/url_classification_1project/URL-categorization-DFE.csv'
+from sklearn.preprocessing import binarize
+
+file = '/home/domantas/Desktop/Erasmus/MachineLearning/url_classification_1project/50_url'
 url_counter = 1
 reader = csv.reader(open(file), delimiter=',')
 data = []
@@ -18,20 +22,21 @@ language_blacklist = ['ru', 'vi', 'zh-cn', 'ja', 'ko', 'fa', 'ar', 'et', 'tr', '
 english_vocab = set(w.lower() for w in nltk.corpus.words.words())
 category_dictionary = {}
 counter = 1
+tokens_list = []
+freq_words = []
+filter_data = []
 print(datetime.datetime.now().time())
 
 for row in reader:
     data.append(row)
 
 for row in data:
-    if counter == 15000:
-        break
     print('Nr: ', counter)
     counter += 1
     if row[5] != 'Not_working' and float(row[6]) > 0.5:
         try:
             url = 'http://' + row[-1]
-            html = urlopen(url, timeout=10).read()
+            html = urlopen(url, timeout=1).read()
             soup = BeautifulSoup(html, "html.parser")
             for script in soup(["script", "style"]):
                 script.extract()
@@ -39,11 +44,12 @@ for row in data:
             lines = (line.strip() for line in text.splitlines())
             chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
             text = '\n'.join(chunk.lower() for chunk in chunks if chunk)
-
             text_vocab = set(w.lower() for w in text if w.lower().isalpha())
             if detect(text) != 'en':
                 continue
             tokens = nltk.word_tokenize(text)
+            tokens_list += [nltk.word_tokenize(text)]
+
             try:
                 category_dictionary[str(row[5])] += tokens
             except:
@@ -66,6 +72,20 @@ for key in category_dictionary:
     all_words = [i for i in allWordExceptStopDist]
     mostCommon = allWordExceptStopDist.most_common(50)
     category_result[key] = mostCommon
+    freq_words += [word for word, number in mostCommon]
     print(mostCommon)
 # print(category_result)
+
+url_target = np.zeros(pow(len(tokens_list), 2) * 50).reshape(len(tokens_list), len(tokens_list) * 50)
+np_list = []
+counter = 0
+for line in tokens_list:
+    for word in line:
+        if word in freq_words:
+            url_target[counter][freq_words.index(word)] += 1
+    counter += 1
+# print(np.asarray(np_list))
+# print(len(tokens_list))
+# print(len(np.asarray(np_list)))
+print(url_target)
 print(datetime.datetime.now().time())
