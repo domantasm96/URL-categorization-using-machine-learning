@@ -1,0 +1,166 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips13submit_e,times}
+\usepackage{hyperref}
+\usepackage{epsfig}
+%\usepackage{mahnig}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{graphicx}
+%\documentstyle[nips13submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+
+
+\title{URL Categorization}
+
+
+\author{Domantas Meidus}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+
+
+\begin{abstract}
+  In this document we report our proposal for the application of supervised classification methods to the URL Categorization problem. The classifiers that we have selected for the classification tasks were: Support vector machine(SVM), Logistic regression, Decision Trees, KNeighbors. I have implemented the classification process using the scikit-learn, nltk, numpy, urlib, BeautifulSoup and langdetect libraries. The classifiers is learnt by using the train data and computing the accuracy in the test data. From our results the best accuracy has been produced by the Logistic Regression Classifier.
+\end{abstract}
+
+\section{Description of the problem}
+ 
+ The task we have to solve is the classification of the  ``URL categorization'', introduced in \cite{Siebert:1987} and available from the UCI machine learning repository \cite{Blake_and_Merz:1998}. 
+ 
+ The dataset includes category which each URL belongs to. The goal of the project is to predict the category of URL, among as many categories.
+
+  The database has the following characteristics: 
+
+\begin{itemize}
+  \item $18$ attributes.
+  \item $4$ categories.
+  \item $846$ instances. 
+\end{itemize}
+
+
+\section{Description of our approach}
+  
+ The implementation of the project according to the tasks:
+
+\begin{enumerate} 
+
+ \item Design any preprocessing of the web pages in the dataset.
+
+ \item Define and learn the classifier using the training data.
+
+ \item  Design the validation method to evaluate the accuracy of the proposed classification approach.
+ 
+\end{enumerate} 
+
+
+\subsection{Preprocessing}
+
+ For preprocessing data these steps have been made:
+ 
+ \begin{enumerate}
+ 	
+	 	\item Using urlopen html content of URL is downloaded and with BeautifulSoup tool it is converted to the plain text if URL ''Main category'' is not 'Not working' and main\_category:confidence value is greater than 0.5.
+ 	\item Using langdetect tool by plain URL text program detect language which is used in URL content.
+ 	\item If detected language is english and URL domain belongs to 'com', 'org', 'net', '.us', '.uk', '.au' or '.ca' domains - text is tokenize by using nltk tool. 
+ 	
+ 	These actions is done for all URL from URL categorization file.
+ 	
+ 	\item After all URL is filtered, our program determinate which categories are compatible with cross\_val\_predict method: if each category is used more than the number of cross\_val\_predict parameter CV, that means that category can be predicted by cross\_val\_predict method.
+ 	
+ 	These applicable categories are marked as classifier \b{labels}.
+ 	
+ 	\item For each category top 50 words which are the most frequently used in URL is stored in list excluding ''stop words'' and symbols in range 32-64 and 91 - 96 decimal values which represented in ASCII table (\href{http://www.asciitable.com/}{http://www.asciitable.com/}).
+ 	
+ 	\item Vector with zero values is created for each URL with top 50 words for each category. If each filtered URL top most frequently words contains categories used most frequently words, then value of word position in vector is changed to value 1.
+ 	
+ 	After this action vector representation of each filtered URL is marked as classifier \b{features}.
+ 	
+ \end{enumerate} 
+	
+  The data was split into two different sets: train and test, for validation. We use the same train set to learn all the classifiers, and the same test set for evaluating their accuracy.
+
+
+\subsection{Classifiers}
+
+ We use three different classifiers:
+
+  \begin{enumerate}   
+    \item Logistic regression
+    \item Decision trees
+    \item Support Vector Machine
+  	\item KNeighbors with parameters:
+      \begin{itemize}
+           \item n\_neighbors=5
+           \item metric="euclidean" 
+       \end{itemize}
+   \end{enumerate}
+
+For each classifier, these were the parameters by default of the scikit-learn library. 
+ 
+\subsection{Validation}
+ 
+ To validate our results we compute the classifier accuracy in the test data. Another possibility was to compute the cross-validation in the complete dataset but we used the split between train and test because it was simpler. 
+
+ As an additional validation step we computed the confusion matrices for the three classifiers.
+ 
+\section{Implementation}
+ All the project steps were implemented in Python. Libraries that was used in the project: urlib and BeautifulSoup for downloading URL and parsing HTML code into plain text, langdetect for language detection from plain text, numpy for using data structures to store labels and features information and scikit-learn for the classification tasks. Illustration how the implementation works in the Python notebook \texttt{URL-categorization-Jupyter-Notebook.ipynb}.
+
+
+\section{Results}
+
+ The accuracies produced by the Logistic regression, Decision tree, Support Vector Machine and KNeighbors classifiers were, respectively: $0.4310$, $0.2528$, $0.1149$ and $0.0919$. Therefore, the best classifier was logistic regression.
+ 
+ The results of the computation of the confusion matrices for  Logistic regression, Support Vector Machine, Decision tree and KNeighbors classifiers are respectively shown in Tables~\ref{fig:lr_confusion.png}, \ref{fig:SVM_confusion.png}, \ref{fig:dc_confusion.png} and~\ref{fig:knb_confusion.png}.
+\hfill
+\begin{figure}
+	\includegraphics[width=\linewidth]{lr_confusion.png}
+	\caption{Logistic Regression confusion matrix}
+	\label{fig:lr_confusion.png}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{SVM_confusion.png}
+	\caption{Support vector machine confusion matrix}
+	\label{fig:SVM_confusion.png}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{dc_confusion.png}
+	\caption{Decision tree confusion matrix}
+	\label{fig:dc_confusion.png}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{knb_confusion.png}
+	\caption{KNeighbors confusion matrix}
+	\label{fig:knb_confusion.png}
+\end{figure}
+
+
+\section{Conclusions}
+  In our project we have applied  Logistic regression, Decision tree, Support Vector Machine and KNeighbors classifiers  to the ``URL categorization'', introduced in \cite{url_class}. We have computed the accuracy of these classifiers and observed that Logistic regression produces the highest accuracy. We have also observed, from the analysis of the confusion matrices, that all classifiers make a poor discrimination between the Saab 9000 and an Opel Manta 400 cars. 
+
+
+ \bibliographystyle{unsrt}
+ \bibliography{bibtex_references_project}
+
+\end{document}

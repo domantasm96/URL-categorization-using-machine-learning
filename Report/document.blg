@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: document.aux
+The style file: unsrt.bst
+Database file #1: bibtex_references_project.bib
+Warning--I didn't find a database entry for "Siebert:1987"
+Warning--I didn't find a database entry for "Blake_and_Merz:1998"
+Warning--empty author in url_class
+Warning--empty booktitle in url_class
+You've used 1 entry,
+            1791 wiz_defined-function locations,
+            453 strings with 3645 characters,
+and the built_in function-call counts, 160 in all, are:
+= -- 10
+> -- 1
+< -- 0
++ -- 1
+- -- 0
+* -- 9
+:= -- 24
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 12
+empty$ -- 24
+format.name$ -- 0
+if$ -- 36
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 7
+num.names$ -- 0
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 3
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 0
+width$ -- 2
+write$ -- 10
+(There were 4 warnings)
