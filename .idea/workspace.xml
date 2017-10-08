@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1ff0af8-f8a7-4e97-9c15-e220434b9764" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/50_url" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/URL-categorization_10000.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/URL-categorization_2000.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Untitled.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/filtered_data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/filtered_data_1000" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results_1000" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results_10000" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results_2000" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/total_results" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/total_results_2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/url_10" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/url_100" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/url_1000" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/url_test" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/useful_links" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d1ff0af8-f8a7-4e97-9c15-e220434b9764" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
