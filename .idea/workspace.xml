@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1ff0af8-f8a7-4e97-9c15-e220434b9764" name="Default" comment="" />
+    <list default="true" id="d1ff0af8-f8a7-4e97-9c15-e220434b9764" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/50_url" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/URL-categorization_10000.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/URL-categorization_2000.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Untitled.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/filtered_data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/filtered_data_1000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results_1000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results_10000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results_2000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/total_results" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/total_results_2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/url_10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/url_100" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/url_1000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/url_test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/useful_links" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,15 +29,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/url_classification_1project$main.coverage" NAME="main Coverage Results" MODIFIED="1506267759326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/url_classification_1project$main.coverage" NAME="main Coverage Results" MODIFIED="1507484212579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/url_classification_1project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1506956206220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../youtube_MachineLearning" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+            <state relative-caret-position="525">
+              <caret line="114" column="54" lean-forward="true" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -26,51 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="URL-categorization_10000.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/URL-categorization_10000.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6664">
-              <caret line="392" column="26" lean-forward="false" selection-start-line="392" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="url_10_lines" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/url_10_lines">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="170" lean-forward="false" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="URL-categorization-DFE.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/URL-categorization-DFE.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="50_url" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/50_url">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10863">
-              <caret line="639" column="167" lean-forward="true" selection-start-line="639" selection-start-column="167" selection-end-line="639" selection-end-column="178" />
+            <state relative-caret-position="42619">
+              <caret line="2507" column="193" lean-forward="false" selection-start-line="2507" selection-start-column="173" selection-end-line="2507" selection-end-column="193" />
               <folding />
             </state>
           </provider>
@@ -90,7 +70,21 @@
       <find>free</find>
       <find>ana-white.com</find>
       <find>Sc</find>
+      <find>50</find>
+      <find>url_target</find>
+      <find>filter_rows</find>
+      <find>print(datetime.datetime.now().time())</find>
+      <find>en</find>
+      <find>.en</find>
+      <find>.org</find>
+      <find>.net</find>
+      <find>.uk</find>
+      <find>.us</find>
+      <find>.ca</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -100,7 +94,15 @@
         <option value="$PROJECT_DIR$/URL-categorization-DFE.csv" />
         <option value="$PROJECT_DIR$/50_url" />
         <option value="$PROJECT_DIR$/output.txt" />
+        <option value="$PROJECT_DIR$/url_1000" />
+        <option value="$PROJECT_DIR$/filtered_data" />
+        <option value="$PROJECT_DIR$/url_30" />
+        <option value="$PROJECT_DIR$/url_test" />
+        <option value="$PROJECT_DIR$/../../youtube_MachineLearning/main.py" />
+        <option value="$PROJECT_DIR$/url_100" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/total_results_2" />
+        <option value="$PROJECT_DIR$/total_results" />
       </list>
     </option>
   </component>
@@ -111,11 +113,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="501" />
-    <option name="y" value="-4" />
-    <option name="width" value="960" />
-    <option name="height" value="1084" />
+    <option name="x" value="-1" />
+    <option name="y" value="-11" />
+    <option name="width" value="1922" />
+    <option name="height" value="1092" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -131,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -144,11 +146,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../youtube_MachineLearning/main.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -164,6 +167,24 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../youtube_MachineLearning" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="url_classification_1project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../youtube_MachineLearning/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -182,14 +203,22 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -202,15 +231,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="501" y="-4" width="1922" height="1092" extended-state="6" />
+    <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15228967" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17465389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33055267" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3076121" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -236,6 +266,48 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/50_url">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7208">
+          <caret line="424" column="49" lean-forward="true" selection-start-line="424" selection-start-column="49" selection-end-line="424" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/URL-categorization_10000.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6664">
+          <caret line="392" column="26" lean-forward="false" selection-start-line="392" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url_10">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="170" lean-forward="false" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/URL-categorization-DFE.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50_url">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10863">
+          <caret line="639" column="167" lean-forward="false" selection-start-line="639" selection-start-column="167" selection-end-line="639" selection-end-column="178" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -250,15 +322,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6664">
           <caret line="392" column="26" lean-forward="false" selection-start-line="392" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url_10_lines">
+    <entry file="file://$PROJECT_DIR$/url_10">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="170" lean-forward="true" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -266,7 +336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -274,7 +343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="167" lean-forward="true" selection-start-line="639" selection-start-column="167" selection-end-line="639" selection-end-column="178" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -292,7 +360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -300,15 +367,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6664">
           <caret line="392" column="26" lean-forward="false" selection-start-line="392" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url_10_lines">
+    <entry file="file://$PROJECT_DIR$/url_10">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="170" lean-forward="true" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -316,7 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -324,7 +388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="167" lean-forward="true" selection-start-line="639" selection-start-column="167" selection-end-line="639" selection-end-column="178" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -338,11 +401,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url_10_lines">
+    <entry file="file://$PROJECT_DIR$/url_10">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -350,7 +412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -368,15 +429,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284410">
           <caret line="16730" column="189" lean-forward="false" selection-start-line="16730" selection-start-column="171" selection-end-line="16730" selection-end-column="189" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url_10_lines">
+    <entry file="file://$PROJECT_DIR$/url_10">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="170" lean-forward="false" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -394,7 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="185" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="185" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -408,11 +466,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url_10_lines">
+    <entry file="file://$PROJECT_DIR$/url_10">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -420,67 +477,131 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test1" />
-    <entry file="file://$PROJECT_DIR$/test">
+    <entry file="file://$PROJECT_DIR$/.~lock.URL-categorization-DFE.csv#" />
+    <entry file="file://$PROJECT_DIR$/output" />
+    <entry file="file://$PROJECT_DIR$/url_10">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6604">
-          <caret line="9981" column="26" lean-forward="false" selection-start-line="9981" selection-start-column="26" selection-end-line="9981" selection-end-column="26" />
+        <state relative-caret-position="17">
+          <caret line="1" column="170" lean-forward="false" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.~lock.URL-categorization-DFE.csv#" />
-    <entry file="file://$PROJECT_DIR$/output" />
-    <entry file="file://$PROJECT_DIR$/output.txt">
+    <entry file="file://$PROJECT_DIR$/filtered_url_5000" />
+    <entry file="file://$PROJECT_DIR$/results_1000">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6664">
-          <caret line="392" column="26" lean-forward="false" selection-start-line="392" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/50_url">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10863">
-          <caret line="639" column="167" lean-forward="true" selection-start-line="639" selection-start-column="167" selection-end-line="639" selection-end-column="178" />
-          <folding />
+        <state relative-caret-position="1683">
+          <caret line="99" column="165" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="165" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url_10_lines">
+    <entry file="file://$PROJECT_DIR$/filtered_data.csv" />
+    <entry file="file://$PROJECT_DIR$/url_1000">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="170" lean-forward="false" selection-start-line="1" selection-start-column="170" selection-end-line="1" selection-end-column="184" />
-          <folding />
+        <state relative-caret-position="583">
+          <caret line="999" column="174" lean-forward="false" selection-start-line="999" selection-start-column="174" selection-end-line="999" selection-end-column="174" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url_test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filtered_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test" />
+    <entry file="file://$PROJECT_DIR$/../../youtube_MachineLearning/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filtered_data_1000">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="170" lean-forward="false" selection-start-line="0" selection-start-column="170" selection-end-line="0" selection-end-column="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results_2000">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url_categorization_jupyter.ipynb" />
+    <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6324">
+          <caret line="372" column="27" lean-forward="false" selection-start-line="372" selection-start-column="27" selection-end-line="372" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/URL-categorization_10000.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="156" lean-forward="true" selection-start-line="38" selection-start-column="156" selection-end-line="38" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url_100">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="191" lean-forward="false" selection-start-line="4" selection-start-column="187" selection-end-line="4" selection-end-column="191" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/URL-categorization-DFE.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        <state relative-caret-position="42619">
+          <caret line="2507" column="193" lean-forward="false" selection-start-line="2507" selection-start-column="173" selection-end-line="2507" selection-end-column="193" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/total_results_2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825">
+          <caret line="135" column="59" lean-forward="false" selection-start-line="135" selection-start-column="59" selection-end-line="135" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/total_results">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="121" column="37" lean-forward="false" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        <state relative-caret-position="525">
+          <caret line="114" column="54" lean-forward="true" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/URL-categorization_10000.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
