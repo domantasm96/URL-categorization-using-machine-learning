@@ -43,7 +43,7 @@
 
 \section{Description of the problem}
  
- The task we have to solve is the classification of the  ``URL categorization'', introduced in \cite{Siebert:1987} and available from the UCI machine learning repository \cite{Blake_and_Merz:1998}. 
+ The task we have to solve is the classification of the  ``URL categorization'', introduced in the project task. 
  
  The dataset includes category which each URL belongs to. The goal of the project is to predict the category of URL, among as many categories.
 
@@ -77,7 +77,7 @@
  
  \begin{enumerate}
  	
-	 	\item Using urlopen html content of URL is downloaded and with BeautifulSoup tool it is converted to the plain text if URL ''Main category'' is not 'Not working' and main\_category:confidence value is greater than 0.5.
+	 	\item Using urlopen \cite{url_open} html content of URL is downloaded and with BeautifulSoup tool it is converted to the plain text if URL ''Main category'' is not 'Not working' and main\_category:confidence value is greater than 0.5.
  	\item Using langdetect tool by plain URL text program detect language which is used in URL content.
  	\item If detected language is english and URL domain belongs to 'com', 'org', 'net', '.us', '.uk', '.au' or '.ca' domains - text is tokenize by using nltk tool. 
  	
@@ -157,8 +157,7 @@ For each classifier, these were the parameters by default of the scikit-learn li
 
 
 \section{Conclusions}
-  In our project we have applied  Logistic regression, Decision tree, Support Vector Machine and KNeighbors classifiers  to the ``URL categorization'', introduced in \cite{url_class}. We have computed the accuracy of these classifiers and observed that Logistic regression produces the highest accuracy. We have also observed, from the analysis of the confusion matrices, that all classifiers make a poor discrimination between the Saab 9000 and an Opel Manta 400 cars. 
-
+  In our project we have applied  Logistic regression, Decision tree, Support Vector Machine and KNeighbors classifiers  to the ``URL categorization'', introduced in \cite{url_class}. We have computed the accuracy of these classifiers and observed that Logistic regression produces the highest accuracy.
 
  \bibliographystyle{unsrt}
  \bibliography{bibtex_references_project}
