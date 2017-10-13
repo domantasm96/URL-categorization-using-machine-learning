@@ -7,6 +7,8 @@
 \usepackage{enumerate}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{float}
+
 %\documentstyle[nips13submit_09,times,art10]{article} % For LaTeX 2.09
 
 
@@ -38,7 +40,7 @@
 
 
 \begin{abstract}
-  In this document we report our proposal for the application of supervised classification methods to the URL Categorization problem. The classifiers that we have selected for the classification tasks were: Support vector machine(SVM), Logistic regression, Decision Trees, KNeighbors. I have implemented the classification process using the scikit-learn, nltk, numpy, urlib, BeautifulSoup and langdetect libraries. The classifiers is learnt by using the train data and computing the accuracy in the test data. From our results the best accuracy has been produced by the Logistic Regression Classifier.
+  In this document we report our proposal for the application of supervised classification methods to the URL Categorization problem. The classifiers that we have selected for the classification tasks were: Logistic regression, Decision Trees, KNeighbors. I have implemented the classification process using the scikit-learn, nltk, numpy, urlib, BeautifulSoup and langdetect libraries. The classifiers is learnt by using the train data and computing the accuracy in the test data. From our results the best accuracy has been produced by the Logistic Regression Classifier.
 \end{abstract}
 
 \section{Description of the problem}
@@ -51,8 +53,32 @@
 
 \begin{itemize}
   \item $18$ attributes.
-  \item $4$ categories.
-  \item $846$ instances. 
+  \item $25$ categories:
+  	\subitem 1 News\_and\_Media
+  	\subitem 2 Career\_and\_Education
+  	\subitem 3 Internet\_and\_Telecom
+  	\subitem 4 Sports
+  	\subitem 5 Games
+  	\subitem 6 Books\_and\_Literature
+  	\subitem 7 Law\_and\_Government
+  	\subitem 8 Travel
+  	\subitem 9 Finance
+  	\subitem 10 Arts\_and\_Entertainment
+  	\subitem 11 Reference
+  	\subitem 12 Autos\_and\_Vehicles
+  	\subitem 13 Adult
+  	\subitem 14 Business\_and\_Industry
+  	\subitem 15 People\_and\_Society
+  	\subitem 16 Shopping
+  	\subitem 17 Health
+  	\subitem 18 Pets\_and\_Animals
+  	\subitem 19 Home\_and\_Garden
+  	\subitem 20 Beauty\_and\_Fitness
+  	\subitem 21 Gambling
+  	\subitem 22 Recreation\_and\_Hobbies
+  	\subitem 23 Science
+  	\subitem 24 Computer\_and\_Electronics
+  	\subitem 25 Food\_and\_Drink
 \end{itemize}
 
 
@@ -83,7 +109,7 @@
  	
  	These actions is done for all URL from URL categorization file.
  	
- 	\item After all URL is filtered, our program determinate which categories are compatible with cross\_val\_predict method: if each category is used more than the number of cross\_val\_predict parameter CV, that means that category can be predicted by cross\_val\_predict method.
+ 	\item After all URL is filtered, our program determinate which categories are compatible with cross validation predict method: if each category is used more than the number of cross validation predict parameter CV, that means that category can be predicted by cross validation predict method. Take note that Cross validation accepts those classes which have minimum 2 of training data.
  	
  	These applicable categories are marked as classifier \b{labels}.
  	
@@ -104,13 +130,48 @@
 
   \begin{enumerate}   
     \item Logistic regression
+    \begin{itemize}
+    	\item C=1.0
+    	\item class\_weight=None 
+    	\item dual=False
+    	\item fit\_intercept=True 
+    	\item intercept\_scaling=1
+    	\item max\_iter=100 
+    	\item multi\_class='ovr'
+    	\item n\_jobs=1 
+    	\item penalty='l2'
+    	\item solver='liblinear'
+    	\item tol=0.0001
+    	\item verbose=0
+    	\item warm\_start=False 
+    \end{itemize}
     \item Decision trees
-    \item Support Vector Machine
+    \begin{itemize}
+    	\item class\_weight=None 
+    	\item criterion='gini'
+    	\item max\_depth=None 
+    	\item max\_features=None
+    	\item max\_leaf\_nodes=None
+    	\item min\_impurity\_decrease=0.0'
+    	\item min\_impurity\_split=None 
+    	\item min\_samples\_leaf=1
+    	\item min\_samples\_split=2
+    	\item min\_weight\_fraction\_leaf=0.0
+    	\item presort=False
+    	\item random\_state=None
+    	\item splitter='best'
+    \end{itemize}
   	\item KNeighbors with parameters:
       \begin{itemize}
-           \item n\_neighbors=5
-           \item metric="euclidean" 
-       \end{itemize}
+      	\item algorithm='auto' 
+      	\item leaf\_size=30
+      	\item metric='euclidean'
+      	\item metric\_params=None
+      	\item n\_jobs=1
+      	\item n\_neighbors=5
+      	\item p=2
+      	\item weights='uniform'
+      \end{itemize}
    \end{enumerate}
 
 For each classifier, these were the parameters by default of the scikit-learn library. 
@@ -119,46 +180,73 @@ For each classifier, these were the parameters by default of the scikit-learn li
  
  To validate our results we compute the classifier accuracy in the test data. Another possibility was to compute the cross-validation in the complete dataset but we used the split between train and test because it was simpler. 
 
- As an additional validation step we computed the confusion matrices for the three classifiers.
+ As an additional validation step we computed the confusion matrices for the twenty four classifiers.
  
 \section{Implementation}
  All the project steps were implemented in Python. Libraries that was used in the project: urlib and BeautifulSoup for downloading URL and parsing HTML code into plain text, langdetect for language detection from plain text, numpy for using data structures to store labels and features information and scikit-learn for the classification tasks. Illustration how the implementation works in the Python notebook \texttt{URL-categorization-Jupyter-Notebook.ipynb}.
 
 
 \section{Results}
+The highest score performance comparing of all 3 classifiers has Logistic Regression. The score results are displayed in table~\ref{tab:lr_score}.
+The score results for each class displayed for Logistic Regression ~\ref{fig:lr_scores.png} figure, Decision tree ~\ref{fig:dc_score.png} figure, KNeighbors ~\ref{fig:kn_score.png} figure.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lrrrr}
+		 &   \textbf{Logistic Regression}     &  \textbf{Decision tree}     &  \textbf{KNeighbors} \\\hline
+		\toprule \hline
+		Precision score:     &  0.40 &   0.28 &   0.23 \\\hline
+		recall:     &   0.49 &   0.28 &   0.11 \\\hline
+		f1-score:     &   0.46 &   0.28 &   0.09 \\\hline
+		Accuracy score:     &   0.49 &   0.28 &   0.10 \\\hline
+		\bottomrule \hline
+	\end{tabular}
+	\caption{Scores produced by Logistic Regression.}
+	\label{tab:lr_score}
+\end{table}	
 
- The accuracies produced by the Logistic regression, Decision tree, Support Vector Machine and KNeighbors classifiers were, respectively: $0.4310$, $0.2528$, $0.1149$ and $0.0919$. Therefore, the best classifier was logistic regression.
+\begin{figure}[H]
+	\minipage{0.32\textwidth}
+	\includegraphics[width=\linewidth]{lr_scores.png}
+	\caption{Logistic Regression scores for each class}\label{fig:lr_scores.png}
+	\endminipage\hfill\hfill\hfill\hfill\hfill\hfill
+	\minipage{0.32\textwidth}
+	\includegraphics[width=\linewidth]{dc_score.png}
+	\caption{Decision Tree scores for each class}\label{fig:dc_score.png}
+	\endminipage\hfill\hfill\hfill\hfill\hfill\hfill
+	\minipage{0.32\textwidth}%
+	\includegraphics[width=\linewidth]{kn_score.png}
+	\caption{KNeighbors scores for each class}\label{fig:kn_score.png}
+	\endminipage
+\end{figure}
+
  
- The results of the computation of the confusion matrices for  Logistic regression, Support Vector Machine, Decision tree and KNeighbors classifiers are respectively shown in Tables~\ref{fig:lr_confusion.png}, \ref{fig:SVM_confusion.png}, \ref{fig:dc_confusion.png} and~\ref{fig:knb_confusion.png}.
+ The results of the computation of the confusion matrices for  Logistic regression, Decision tree and KNeighbors classifiers are respectively shown in Tables~\ref{fig:lr_con.png}, \ref{fig:dc_con.png} and~\ref{fig:kn_con.png}.
 \hfill
-\begin{figure}
-	\includegraphics[width=\linewidth]{lr_confusion.png}
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{lr_con.png}
 	\caption{Logistic Regression confusion matrix}
-	\label{fig:lr_confusion.png}
+	\label{fig:lr_con.png}
 \end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{SVM_confusion.png}
-	\caption{Support vector machine confusion matrix}
-	\label{fig:SVM_confusion.png}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{dc_confusion.png}
+\hfill
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{dc_con.png}
 	\caption{Decision tree confusion matrix}
-	\label{fig:dc_confusion.png}
+	\label{fig:dc_con.png}
 \end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{knb_confusion.png}
+\hfill
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{kn_con.png}
 	\caption{KNeighbors confusion matrix}
-	\label{fig:knb_confusion.png}
+	\label{fig:kn_con.png}
 \end{figure}
-
 
 \section{Conclusions}
-  In our project we have applied  Logistic regression, Decision tree, Support Vector Machine and KNeighbors classifiers  to the ``URL categorization'', introduced in \cite{url_class}. We have computed the accuracy of these classifiers and observed that Logistic regression produces the highest accuracy.
-
+  In our project we have applied  Logistic regression, Decision tree and KNeighbors classifiers  to the ``URL categorization'', introduced in \cite{url_class}. We have computed the accuracy of these classifiers and observed that:
+  \textbf{Logistic regression} produces the highest accuracy. We have also observed, from the analysis of the confusion matrices, that Logistic Regression produced poor discrimination between the People\_and\_Society and an Health categories. Also, it was poorly trained to detect Pets\_and\_Animals category.\\
+  \textbf{KNeighbors} was poorly trained to detect Pets\_and\_Animals category.\\
+  \textbf{Logistic regression} produced poor discrimination between the Health and an Internet\_and\_Telecom. Also, for this classifier it was unable to define Food\_and\_Drink category.
+	
+  
  \bibliographystyle{unsrt}
  \bibliography{bibtex_references_project}
 

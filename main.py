@@ -11,22 +11,22 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
+from sklearn.metrics import classification_report
+import pandas as pd
 
 
-def score_calculation(labels, predicition):
-    print(prediction)
+def score_calculation(labels, prediction):
+    y_true = pd.Series(labels)
+    y_pred = pd.Series(prediction)
+    print(str(lr))
+    print('Confusion matrix: \n{}'.format(pd.crosstab(y_true, y_pred, rownames=['True'], colnames=['Predicted'], margins=True)))
+    print(classification_report(labels, prediction))
     print("Accuracy score: {}".format(metrics.accuracy_score(labels, prediction)))
-    # print("Precision_score: {}".format(metrics.precision_score(labels, prediction, average='micro')))
-    print("Precision_score: {}".format(metrics.precision_score(labels, prediction, average='micro')))
-    print("Recall_score: {}".format(metrics.recall_score(labels, prediction, average='micro')))
-    print("F1 score: {}".format(metrics.f1_score(labels, prediction, average='micro')))
-    print('Confusion matrix: \n{}'.format(metrics.confusion_matrix(labels, prediction)))
-    print()
 
 file = 'URL-categorization-DFE.csv'
-limiter = 2000
-top = 50
+limiter = 5000
 cv_number = 5
+top = 15
 reader = csv.reader(open(file), delimiter=',')
 header = next(reader)
 char_blacklist = list(chr(i) for i in range(32, 127) if i <= 64 or i >= 91 and i <= 96 or i >= 123)
@@ -35,7 +35,7 @@ stopwords.extend(char_blacklist)
 language_whitelist = ['en']
 domains_whitelist = ['com', 'org', 'net', '.us', '.uk', '.au', '.ca']
 english_vocab = set(w.lower() for w in nltk.corpus.words.words())
-# print(datetime.datetime.now().time())
+print(datetime.datetime.now().time())
 data = []
 for row in reader:
     data.append(row)
@@ -45,7 +45,7 @@ filter_data = []
 counter = 0
 print('URL parsing and filtering')
 for url_counter, row in enumerate(data):
-    if url_counter >= limiter:
+    if url_counter > limiter:
         break
     if row[5] != 'Not_working' and float(row[6]) > 0.5:
         try:
@@ -64,12 +64,7 @@ for url_counter, row in enumerate(data):
             counter += 1
             tokens = nltk.word_tokenize(text)
             tokens_list += [nltk.word_tokenize(text)]
-            print('----')
-            print('URL: ' + row[-1])
-            print('Lang: '+ detect(text))
-            print('CATEGORY: ' + row[5])
-            print(url_counter)
-            print('Nr: ', counter)
+            print('{} | {} |URL: {}| CATEGORY: {}'.format(url_counter, counter, row[-1], row[5]))
             filter_data += [row[5]]
 
         except:
@@ -78,6 +73,8 @@ print('Filtered English URL')
 f1 = nltk.FreqDist(filter_data).most_common()
 f2 = list(category for category, number in f1 if number >= cv_number)
 all_categories = list(set(f2))
+labels_data = [index for index, word in enumerate(f2)]
+print(labels_data)
 print('CREATING LABELS DATA.')
 labels = []
 counter = 0
@@ -108,16 +105,11 @@ for index, line in enumerate(tokens_list):
 
 for number, word in enumerate(all_categories):
     print(number, word)
-print(labels.shape, features.shape)
-print(features)
 c, r = labels.shape
+print('Number of URL: {}'.format(c))
 labels = labels.reshape(c,)
 print('************ Logistic Regression ************')
 lr = LogisticRegression()
-prediction = cross_val_predict(lr, features, labels, cv=cv_number)
-score_calculation(labels, prediction)
-print('************ Support Vector Machine ************')
-lr = SVC()
 prediction = cross_val_predict(lr, features, labels, cv=cv_number)
 score_calculation(labels, prediction)
 print('************ Decision Tree ************')
@@ -129,4 +121,8 @@ lr = KNeighborsClassifier(n_neighbors=5, metric="euclidean")
 prediction = cross_val_predict(lr, features, labels, cv=cv_number)
 score_calculation(labels, prediction)
 
+# print('************ Support Vector Machine ************')
+# lr = SVC()
+# prediction = cross_val_predict(lr, features, labels, cv=cv_number)
+# score_calculation(labels, prediction)
 print(datetime.datetime.now().time())
