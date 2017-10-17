@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 from langdetect import detect
 from sklearn.model_selection import cross_val_predict
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
@@ -24,8 +23,8 @@ def score_calculation(labels, prediction):
     print("Accuracy score: {}".format(metrics.accuracy_score(labels, prediction)))
 
 file = 'URL-categorization-DFE.csv'
-limiter = 5000
-cv_number = 5
+limiter = 50
+cv_number = 2
 top = 15
 reader = csv.reader(open(file), delimiter=',')
 header = next(reader)
@@ -73,8 +72,7 @@ print('Filtered English URL')
 f1 = nltk.FreqDist(filter_data).most_common()
 f2 = list(category for category, number in f1 if number >= cv_number)
 all_categories = list(set(f2))
-labels_data = [index for index, word in enumerate(f2)]
-print(labels_data)
+print(all_categories)
 print('CREATING LABELS DATA.')
 labels = []
 counter = 0
