@@ -102,14 +102,28 @@
  For preprocessing data these steps have been made:
  
  \begin{enumerate}
- 	
-	 	\item Using urlopen \cite{url_open} html content of URL is downloaded and with BeautifulSoup tool it is converted to the plain text if URL ''Main category'' is not 'Not working' and main\_category:confidence value is greater than 0.5.
+ 	\item Define setup variables which program needs to start up:
+ 	\subitem \textbf{file}: path to the dataset in the local computer.
+ 	\subitem \textbf{limiter}: how many lines of dataset we want to preprocess.
+ 	\subitem \textbf{cv\_number}: determine in how many parts program splits labels for training and testing cases using cross validation method.
+ 	\subitem \textbf{top}: a number which represents how many most frequent words is stored for each category
+ 	\subitem  \textbf{char\_blacklist, stopwords, language\_whitelist, domains\_whitelist, english\_vocab} - these variables are for URL filtering.
+ 	\item Check if limiter and cv\_number meets minimum requirements to prevent cross validation method errors:
+ 	\subitem if cv\_number \textless{} 2: cv\_number = 2
+ 	\subitem if limiter \textless{}= 500:
+ 		\subsubitem  if limiter \textgreater{}= 150 and cv\_number \textgreater{} 2: cv\_number = 2
+ 		\subsubitem  if limiter \textgreater{}= 250 and cv\_number \textless{} 3 or cv\_number \textgreater{} 3:  cv\_number = 3
+ 		\subitem if limiter \textgreater{}= 350 and cv\_number \textless{} 4 or cv\_number \textgreater{} 4: cv\_number = 4
+ 		\subitem if limiter \textgreater{}= 500 and cv\_number \textless{} 5 or cv\_number \textgreater{} 5: cv\_number = 5
+ 		\subsubitem  if limiter \textless{} 150: limiter = 150, cv\_number = 2
+	\item Using urlopen \cite{url_open} html content of URL is downloaded and with BeautifulSoup tool it is converted to the plain text if URL ''Main category'' is not 'Not working' and main\_category:confidence value is greater than 0.5.
  	\item Using langdetect tool by plain URL text program detect language which is used in URL content.
  	\item If detected language is english and URL domain belongs to 'com', 'org', 'net', '.us', '.uk', '.au' or '.ca' domains - text is tokenize by using nltk tool. 
  	
  	These actions is done for all URL from URL categorization file.
  	
  	\item After all URL is filtered, our program determinate which categories are compatible with cross validation predict method: if each category is used more than the number of cross validation predict parameter CV, that means that category can be predicted by cross validation predict method. Take note that Cross validation accepts those classes which have minimum 2 of training data.
+ 	
  	
  	These applicable categories are marked as classifier \b{labels}.
  	

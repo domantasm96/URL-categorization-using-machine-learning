@@ -22,9 +22,10 @@ def score_calculation(labels, prediction):
     print(classification_report(labels, prediction))
     print("Accuracy score: {}".format(metrics.accuracy_score(labels, prediction)))
 
+print(datetime.datetime.now().time())
 file = 'URL-categorization-DFE.csv'
-limiter = 50
-cv_number = 2
+limiter = 500
+cv_number = 5
 top = 15
 reader = csv.reader(open(file), delimiter=',')
 header = next(reader)
@@ -34,7 +35,23 @@ stopwords.extend(char_blacklist)
 language_whitelist = ['en']
 domains_whitelist = ['com', 'org', 'net', '.us', '.uk', '.au', '.ca']
 english_vocab = set(w.lower() for w in nltk.corpus.words.words())
-print(datetime.datetime.now().time())
+if cv_number < 2:
+    cv_number = 2
+if limiter <= 500:
+    if limiter >= 150 and cv_number > 2:
+        cv_number = 2
+    if limiter >= 250 and cv_number < 3 or cv_number > 3:
+        cv_number = 3
+    if limiter >= 350 and cv_number < 4 or cv_number > 4:
+        cv_number = 4
+    if limiter >= 500 and cv_number < 5 or cv_number > 5:
+        cv_number = 5
+    if limiter < 150:
+        limiter = 150
+        cv_number = 2
+print('limiter = {}'.format(limiter))
+print('cv_number = {}'.format(cv_number))
+
 data = []
 for row in reader:
     data.append(row)

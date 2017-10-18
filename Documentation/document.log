@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.8)  13 OCT 2017 02:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.8)  18 OCT 2017 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -338,74 +338,80 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 186.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 112.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 112.
+ [2] [3]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 200.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3]
-<lr_scores.png, id=73, 302.12875pt x 460.72125pt>
+)
+<lr_scores.png, id=75, 302.12875pt x 460.72125pt>
 File: lr_scores.png Graphic file (type png)
  <use lr_scores.png>
-Package pdftex.def Info: lr_scores.png used on input line 209.
+Package pdftex.def Info: lr_scores.png used on input line 223.
 (pdftex.def)             Requested size: 127.1981pt x 193.96558pt.
 
-<dc_score.png, id=74, 305.14pt x 458.71375pt>
+<dc_score.png, id=76, 305.14pt x 458.71375pt>
 File: dc_score.png Graphic file (type png)
  <use dc_score.png>
-Package pdftex.def Info: dc_score.png used on input line 213.
+Package pdftex.def Info: dc_score.png used on input line 227.
 (pdftex.def)             Requested size: 127.1981pt x 191.21658pt.
 
-<kn_score.png, id=75, 304.13625pt x 459.7175pt>
+<kn_score.png, id=77, 304.13625pt x 459.7175pt>
 File: kn_score.png Graphic file (type png)
  <use kn_score.png>
-Package pdftex.def Info: kn_score.png used on input line 217.
+Package pdftex.def Info: kn_score.png used on input line 231.
 (pdftex.def)             Requested size: 127.1981pt x 192.26631pt.
 
-<lr_con.png, id=79, 853.1875pt x 480.79625pt>
+<lr_con.png, id=81, 853.1875pt x 480.79625pt>
 File: lr_con.png Graphic file (type png)
  <use lr_con.png>
-Package pdftex.def Info: lr_con.png used on input line 226.
+Package pdftex.def Info: lr_con.png used on input line 240.
 (pdftex.def)             Requested size: 397.48499pt x 224.00078pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [4pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.230 \hfill
+l.244 \hfill
             pdfTeX warning (ext4): destination with the same identifier (name{f
 igure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.230 \hfill
+l.244 \hfill
             pdfTeX warning (ext4): destination with the same identifier (name{f
 igure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.230 \hfill
+l.244 \hfill
             pdfTeX warning (ext4): destination with the same identifier (name{f
 igure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.230 \hfill
+l.244 \hfill
              <./lr_scores.png> <./dc_score.png> <./kn_score.png>]
-<dc_con.png, id=91, 878.28125pt x 476.78125pt>
+<dc_con.png, id=94, 878.28125pt x 476.78125pt>
 File: dc_con.png Graphic file (type png)
  <use dc_con.png>
-Package pdftex.def Info: dc_con.png used on input line 232.
+Package pdftex.def Info: dc_con.png used on input line 246.
 (pdftex.def)             Requested size: 397.48499pt x 215.77907pt.
 
-<kn_con.png, id=92, 835.12pt x 478.78876pt>
+<kn_con.png, id=95, 835.12pt x 478.78876pt>
 File: kn_con.png Graphic file (type png)
  <use kn_con.png>
-Package pdftex.def Info: kn_con.png used on input line 238.
+Package pdftex.def Info: kn_con.png used on input line 252.
 (pdftex.def)             Requested size: 397.48499pt x 227.88728pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -415,13 +421,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.242 
+l.256 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.242 
+l.256 
        <./lr_con.png> <./dc_con.png>] (./document.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 []\OT1/ptm/m/n/10 urllib doc-u-men-ta-tion.  []$\OT1/pcr/m/n/10 "https : / / do
@@ -429,40 +435,40 @@ cs . python . org / 3 / library / urllib .
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
  [6pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.253 \end{document}
+l.267 \end{document}
                      <./kn_con.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: 54D842AE87799373B35E3D013983695A;441.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 5980 strings out of 493013
- 87211 string characters out of 6135682
+ 5999 strings out of 493013
+ 87514 string characters out of 6135682
  180734 words of memory out of 5000000
- 9420 multiletter control sequences out of 15000+600000
+ 9434 multiletter control sequences out of 15000+600000
  12183 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,9n,39p,587b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,39p,587b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb>
-Output written on document.pdf (6 pages, 221401 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
+es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on document.pdf (6 pages, 230521 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
