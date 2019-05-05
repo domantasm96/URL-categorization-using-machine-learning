@@ -1,0 +1,191 @@
+Natural language processing (NLP) is a automatic computational processing of human languages. It is computer science area of research that explores how computers can be used to understand and manipulate human language text or speech. One of the most frequent challenges in the NLP are:
+\begin{enumerate}
+    \item \textbf{Speech recognition}
+    \item \textbf{Natural language understanding}
+    \item \textbf{Natural language generation}
+\end{enumerate}
+
+In this report the Natural language understanding methods would be covered since the project implementation part is using NLP for analyzing and understanding given natural language data. One of the most difficult challenges for Natural language processing is to understand natural human language which is inherently ambiguous, and not well defined. The NLP requires more statistical algorithmic approach since basic logic, rules and ontologies methods are not fully enough to build a fully working model which could understand natural human language.
+
+The classification problems in Natural language can be categorized in the several types:
+
+\begin{enumerate}
+    \item \textbf{Word}. In "word" called problems which tries to answer to these pseudo questions: in what language the word is written? What other words are similar to the given word? Is the word misspelled or it is written correctly? How common the word is? 
+    
+    These kind of problems are quite rare, as for many words interpretation depends on the context in which they are used
+    \item \textbf{Texts}. "Texts" problems usually faced with an input text such as a phrase, a sentence, a paragraph or a document. These kind of problems seeking to answer the questions such as: is it spam or not? It is about sports or economy? Is it ironic? Is it reliable? What kind of age group the text is created for? and so on. 
+    
+    These types of problems are very common, and they are referred as document classification problems.
+    \item \textbf{Paired Texts}. The input of these problems are pair of words or longer texts. Usually these problems tries to answer the question about the paired words input such as: Are words A and B synonyms? Is word A a valid translation for word B? Are documents A and B written by the same author?
+    \item \textbf{Word in context} The input of these problems are piece of text and a particular word in it(phase, letter etc.). The main goal is to classify the word in the context of the text. The problem tries to cover these kind of questions: does the word or phrase refers to the person, location or organization? Is the word a noun, verb or an adjective? 
+    \item \textbf{Relation between two words}. The input of these problems is two words or phrase within the context of a larger document and the main goal of the problem is to say the relations between words. Is word A the subject of vert B in a given sentence?  
+\end{enumerate}
+
+The natural language processing section would be covered with topics:
+
+\begin{enumerate}
+    \item Words tokenization
+    \item Stop words
+    \item Term Frequency
+    \item N - grams words approach
+\end{enumerate}
+
+\subsection{Word Tokenization}
+
+Tokenization \cite[]{BIB1} is the process of splitting a string into a list of pieces or tokens. Word tokenization is a method of breaking up a piece of text into many pieces, such as sentences and words. A token is a piece of a whole, so a word is a token in a sentence, and a sentence is a token in a paragraph. The main goal of words tokenization is to split the sentence into vector of words. In this way each word of the sentence could be analyzed and used in the further development of NLP methods. 
+
+
+There are multiple types of word tokenization:
+\begin{enumerate}
+    \item \textbf{Tweet tokenizer}. Tweet tokenizer could be used for parsing tweets into tokens. The tweet term is well known in \href{https://twitter.com/}{the Twitter} platform. The tweet have two properties: the text characters length is limited and there are special tags which refers to the group or other person. The example of the tweets tokenization:
+    
+    \begin{center}
+        \begin{lstlisting}[numbers=none]
+        input = "This is a cooool #dummysmiley: :-) :-P <3 and some arrows < > -> <--"
+        \end{lstlisting}
+        \label{figure: tweetTokenizer_input}
+    \end{center}
+    
+    The tweet tokenizer output of the tokenized text:
+    \begin{center}
+        \begin{lstlisting}[numbers=none]
+        ['This', 'is', 'a', 'cooool', '#dummysmiley', ':', ':-)', ':-P', '<3', 'and', 'some', 'arrows', '<', '>', '->', '<--']
+        \end{lstlisting}
+        \label{figure: tweetTokenizer_output}
+    \end{center}
+    
+    \item \textbf{Multi-Word Expression Tokenizer}. A Multi-Word Expression Tokenizer takes a string that has already been divided into tokens and retokenizes it, merging multi-word expressions into single tokens
+    \item \textbf{Regular-Expression Tokenizers}. A RegexpTokenizer splits a string into substrings using a regular expression. For example, the following tokenizer forms tokens out of alphabetic sequences, money expressions, and any other non-whitespace sequences:
+    
+    \begin{center}
+        \begin{lstlisting}[numbers=none]
+        input = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
+        regular_expression = ('\w+|\$[\d\.]+|\S+')
+        \end{lstlisting}
+        \label{figure: regexTokenizer_input}
+    \end{center}
+    The regular exoression output of the tokenized text:
+    \begin{center}
+        \begin{lstlisting}[numbers=none]
+        ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York', '.',
+        'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
+        \end{lstlisting}
+        \label{figure: regexTokenizer_output}
+    \end{center}
+    
+    \item \textbf{S-Expression Tokenizer}. Is used to find parenthesized expressions in a string. In particular, it divides a string into a sequence of substrings that are either parenthesized expressions (including any nested parenthesized expressions), or other whitespace-separated tokens.
+    \item \textbf{Simple Tokenizers}. These tokenizers divide strings into substrings using the string split() method. When tokenizing using a particular delimiter string, use the string split() method directly, as this is more efficient.
+\end{enumerate}
+
+
+Word tokenization requires an input of text, for instance: 
+
+\begin{center}
+\begin{lstlisting}[numbers=none]
+input_text = "Tokenization is the act of breaking up a sequence of strings into pieces."
+\end{lstlisting}
+\captionof{figure}{Input data} 
+\label{figure: tokenization_input}
+\end{center}. 
+ This piece of text would be tokenized into vector as: 
+\begin{center}
+\begin{lstlisting}[numbers=none]
+tokenized_text = ['Tokenization', 'is', 'the', 'act', 'of', 'breaking', 'up', 'a', 'sequence', 'of', 'strings', 'into', 'pieces', '.']
+\end{lstlisting}
+\captionof{figure}{Output after words tokenization process} 
+\label{figure: tokenization_output}
+\end{center}
+
+In english language the tokenization process is quiet straightforward because usually text is splitted based on whitespace or punctuation. However in other languages like Hebrew or Arabic words tokenization could be more challenging because of language properties - some words attaches to the next one without whitespace.
+
+\subsection{Stop Words}
+
+Stop words in Natural language processing is a term that defines the most common words in a language which have no valuable use from it. Each language has a different set of "stop words" so there is no single universal list of stop words. Stop words belongs to the language set so it is cannot be removed by creating rules since they not have common pattern in a different languages. There are several ways of detecting stop words:
+\begin{enumerate}
+    \item Use a generated list of all stop words in a particular language. There are plenty of open source stop words list for each language. This option is reliable when text is general and a task is to rid of well know common words which appears into particular language by the open source dataset creators. There are plenty of sources of stop word dataset list download.
+    \item Determine stop words of their frequency in a text. This method is applied for a text which may contain more stop words based on the problem where open source stop list datasets do not contain them. This method counts the frequency of words in the document. After that there are filtering methods which depends on the problem and text:
+    \begin{enumerate}
+        \item Filter out words which occurs more than x \% where x is a integer number between [0,100]. x number value depends on the language and the problem. It is a good practise to eliminate more than 85\% frequent words in the text in order to be effective in several text mining tasks.
+        \item Least frequent terms as stop words. Some words could be used few times in a text but they might be not proper for NLP tasks. These words could be tags, tweets from the social networks or made-up terms by people. These kind of words may occur rarely in the text so it could be tracked and eliminated.
+        \item Calculating Inverse Document Frequency of each word. IDF value is quicly decreasing as word becomes more common in documents. Most stopwords, due to their prevalence, will have an IDF near one.
+    %   \item Inverse Document Frequency(IDF) \cite[]{BIB2}. IDF is a weight indicating how widely a word is used in the documents. The more frequent the words is used the lower score it gets. IDF is calculated by formula:
+    %     \begin{equation}
+    %     IDF(w) = \log_\frac{N}{Nw}
+    %     \end{equation}
+    %     \begin{description}
+    %     \item[N] Total number of documents
+    %     \item[w] is word
+    %     \item[Nw] is the number of documents containing the word w
+    %     \end{description}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Term Frequency}
+Some problems of NLP requires calculate words frequency in order to get necessary results. This allows differentiate between how many times each word is used. Calculate word count is not a simple task as it primary appears, because there are some flaws which should be though over before producing words counting operations:
+\begin{enumerate}
+    \item The word cases should be normalized. Text in the virtual environment normally are produced from \href{http://www.asciitable.com/}{ASCII character table}. Each symbol has an unique code and these codes are interpreted into human readable symbols. For this reason words like "Computer" and "computer" are not equal, because their symbols do not match although these words have the same meaning. This should be consider before counting words frequency and normalize text by transforming letters to uppercase or lowercase in the text.
+    \item Removing words stemmings. Some words could be written in the other tenses which may transform their form, for instance: english verbs like \textit{announces, announced and announcing} - these words have been made of word \textif{announc}. Normally these words in the word counting would be treated as different words but if their prefix would be removed then it possible to normalize these words to their "primal" form.
+    \item Removing stopwords. 
+\end{enumerate}
+
+Term Frequency \cite{BIB3} could be defined as an integer-valued feature for a word \textit{w} as below:
+\begin{equation}
+\phi w(x, c) = 
+\left \{
+  \begin{tabular}{cl}
+  $\mathit{TFwc}$ & if $w$ is in both $x$ and $c$, \\
+  $0$ & othervise.
+  \end{tabular}
+\right 
+\end{equation}
+\begin{description}
+    \item [$c$] is a document
+    \item [$w$] is a word
+    \item [$TFwc$] is the number of times the word $w$ appears in document $c$
+\end{description}
+\subsubsection{Inverse Document Frequency}
+Inverse Document Frequency(IDF) \cite{BIB2}. IDF is a weight indicating how widely a word is used in the documents. The more frequent the words is used the lower score it gets. IDF is calculated by formula:
+\begin{equation}
+IDF(w) = 1 + \log_\frac{N}{Nw}
+\end{equation}
+\begin{description}
+    \item[$N$] Total number of documents
+    \item[$w$] is a word
+    \item[$Nw$] Number of documents containing word \textif{w}
+\end{description}
+        
+Term frequency measure of how prevalent a term is in a single document. The Inverse Document Frequency is used when calculating of how common is a word in the more than one document. IDF method could reveal rare words that could be not necessary and can be removed from the words list. When a term is very rare the IDF tends to be at the higher value and in opposite - when a term is more common in documents, the IDF value decreases.
+
+\subsubsection{Term Frequency Inverse Document Frequency (TFIDF)}
+Term Frequency Inverse Document Frequency (TFIDF) \cite{BIB1} is a representation for text of Term Frequency (TF) and Inverse Document Frequency (DF). The TFIDF value of term \textit{t} in a given document \textit{d} is thus:
+\begin{equation}
+        TFIDF(t, d) = TF(t, d) \times IDF(t)
+\end{equation}
+\begin{description}
+    \item[$d$] is a single document
+    \item[$t$] is a word
+\end{description}
+
+TFIDF value is specific to a single document (d) whereas IDF depends of the entire documents. Each document thus becomes a feature vector, and the documents is the set of these feature vectors. 
+
+\subsection{N - grams words approach}
+N-grams \cite[]{BIB3} are all combinations of adjacent words or letters of length \tebfbf{N} that could be found in the source text. N-grams method capture the language structure from the statistical point of view, like what letter or word is likely to follow the given one. The longer n-gram(the higher n), the more text should be applied in constructing pairs of n words. For example, pairs of adjacent words for a sentence "The quick brown fox jumps" would be transformed into the set of its constitutent words {quick, brown, fox, jumps}, plus the tokens: quick\_brown, brown\_fox and fox\_jumps. This representation of words is called n-grams. Adjancent pairs are commonly called bi-grams. 
+
+N-grams are useful when the words in pairs have more meaning than words individually. For example: new\_york\_building 3-gram(in other words it could be named as trigram) would be more informative and would have different meaning than each word individually: new, york and building. 
+
+The advantage of using n-grams approach that it is not requiring linguistic knowledge or complex parsing algorithm in order to generate one. 
+
+The disadvantage of n-grams is that they greatly increase the size of the feature set. There are many adjacent words pairs, and still more adjacent word triples. 
+
+Example of N-grams approach:
+
+\begin{table}[H]\centering
+\begin{tabular}{|l|l|p{3.5cm}|p{3.5cm}|}\hline
+ Sample sequence & 1-gram sequence & 2-gram sequence & 3-gram sequence  \\ \hline
+ & Unigram & Bigram & Trigram   \\\hline
+  to be or not to be & to, be, or, not, to, be & to be, be or, or not, not to, to be & to be or, be or not, or not to, not to be\\\hline
+\end{tabular}
+\captionof{table}{Example of n-gram sequences} 
+\label{table: ngram_table}
+\end{table}
+

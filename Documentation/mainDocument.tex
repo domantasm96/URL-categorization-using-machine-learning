@@ -1,0 +1,70 @@
+% Kompiuterijos katedros šablonas
+% Template of Department of Computer Science II
+% Versija 1.0 2015 m. kovas [ March, 2015]
+
+\documentclass[a4paper,12pt,fleqn]{article}
+\input{allPacks}
+
+\newtoggle{inLithuanian}
+ %If the report is in Lithuanian, it is set to true; otherwise, change to false
+\settoggle{inLithuanian}{false}
+
+%create file preface.tex for the preface text
+%if preface is needed set to true
+\newtoggle{needPreface}
+\settoggle{needPreface}{false}
+
+\newtoggle{signaturesOnTitlePage}
+\settoggle{signaturesOnTitlePage}{true}
+
+
+\input{macros}
+
+\begin{document}
+ % #1 -report type, #2 - title, #3-7 students, #8 - supervisor
+ \depttitlepage{Bachelour Thesis}{Website Classification Using Machine Learning Approaches}{Domantas Meidus} 
+ {}{}{}{}% students 2-5
+ {Assoc. Prof., Dr. Linas Bukauskas}
+
+\tableofcontents
+
+
+%keywords and notations if needed
+% \sectionWithoutNumber{Sutartinis terminų žodynas}{keywords}{Pateikiamas terminų sąrašas (jei reikia)}
+
+ %both abstracts
+\bothabstracts{\input{abstractEN}}%tex-file of abstract in original language
+{Internetinių puslapių klasifikacija naudojantis save mokinančios kompiuterinės sistemos metodais} %if work is in LT this title should be in English
+{\input{abstract}}%tex-file of abstract in other language
+
+
+ %Introduction section: label is sec:intro
+\sectionWithoutNumber{\keyWordIntroduction}{intro}
+\input{introduction.tex}
+
+
+
+ %the main part
+\newpage
+
+\section{Natural Language Processing approach}
+\input{Main/NLP.tex}
+
+\section{Machine learning approach}
+\input{Main/ML.tex}
+
+\section{Implementation}
+\input{Main/Implementation.tex}
+
+ %Conclusions section
+\sectionWithoutNumber{\keyWordConclusions}{conclusion}
+\input{conclusions.tex}
+
+%ateities darbų gairės, planas/next steps of the work
+% \sectionWithoutNumber{Ateities tyrimų planas}{future}{Pristatomi ateities darbai ir/ar jų planas, gairės tolimesniems darbams....}
+
+ %file literatureSources.bib
+\referenceSources{literatureSources}
+
+
+\end{document}

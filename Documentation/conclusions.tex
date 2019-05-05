@@ -1,0 +1,89 @@
+
+All created models accuracy on predicting real world websites categories are greater than 50 \%. Statistically that models most likely should have more correct predictions than incorrect in a long term.
+
+During implementation part there was created 3 models which are capable of classifying websites:
+\begin{enumerate}
+    \item \textbf{Custom model}
+    \item \textbf{Logistic Regression model}
+    \item \textbf{Linear Support Vector Machine model}
+\end{enumerate}
+
+
+There are 2 websites data sets with websites URL's and categories:
+\begin{enumerate}
+    \item \textbf{Original data set}
+    
+    Original data set is an open source and it is available at \href{https://www.figure-eight.com/data-for-everyone/}{Data For Everyone data set lists}. The data set contains 31086 different URLs with 81 attributes. 
+    
+    This data set is used to create \textit{the most frequent words list for categories} and \textit{training/testing features and labels sets} for machine learning models.
+    
+    
+    Machine learning performance on the original data set features set:
+    \begin{enumerate}
+        \item \textbf{Logistic Regression}
+        
+            \begin{itemize}
+                \item Accuracy score: 0.85
+                \item Precision score: 0.85
+                \item Recall score: 0.79 
+                \item F1 score: 0.81
+            \end{itemize}
+        
+        \item \textbf{Linear Support Vector Machine}
+        
+            \begin{itemize}
+                    \item Accuracy score: 0.79
+                    \item Precision score: 0.74
+                    \item Recall score: 0.72
+                    \item F1 score: 0.73
+            \end{itemize}
+            
+    \end{enumerate}
+    \item Custom data set
+    
+    Custom data set is human made website data set with 282 differently labeled websites. 
+    
+    Models accuracy performance on the custom data set:
+    
+    \begin{enumerate}
+        \item \textbf{Custom model}: 69.5 \% (197 correct predictions of 282 websites)
+        \item \textbf{Logistic Regression}: 57.8 \% (163 correct predictions of 282 websites)
+        \item \textbf{Linear Support Vector Machine}: 52.5 \% (148 correct predictions of 282 websites)
+    \end{enumerate}
+\end{enumerate}
+
+List of methods that would improve project results:
+
+\begin{itemize}
+    \item \textbf{Download content of website recursively}.
+    
+    This would take a lot of time but may improve the most words frequency list for categories generation since all links in the website would be visited and all information would be scraped. 
+    
+    At this project just one website home page is scraped and it takes about 23 hours to analyse all websites from the original data sets. Scraping all website links would take much more time but it would be more efficient
+    
+    \item \textbf{Revise website categories in the original data set}. 
+    
+    Original data set contains 31086 instances of labeled websites. However the data set was created in 2014 year so it is possible that websites content is changed and the category is also changed according to the website content. The solution would be to have human validation on website categories to confirm if declared category match the reality and is valid.
+    
+    \item \textbf{Translate non english content websites to english language}.
+    
+    Models are capable to predict categories for those websites which the language of content is english. This is the problem because the number of websites is reduced since there are a lot of websites with non english content. In the original data set after filtering out non english websites the number of websites instances reduced from 31086 websites to 10436 websites. 
+    
+    The solution would be translate website non english content to the english language. However, at the moment only "Google" are offering translation API services but these services are with symbols and intensity restrictions which do not allow properly translate websites.
+    
+    Translation implementation would allow models to predict any website with any language and automatically the variaty of websites would be much bigger.
+    
+    \item \textbf{Improve custom data set} .
+    
+    \begin{enumerate}
+        \item The custom data set should be expanded with more websites instances
+        \item Websites instances on categories number should be equal for all categories. Some categories do not have any website or have just a few websites
+    \end{enumerate}
+    
+    \item \textbf{Revise categories}. 
+    
+    Categories of websites sometimes could not be identified accurately since the website data could contain words that would cover multiple categories. Some categories are similar to other categories, for example: "Business\_and\_Industry" and "Finance" or "Internet\_and\_Telecom" and "People\_and\_Society". 
+    
+    For each category need to make an analysis to define main key words for particular category.
+
+\end{itemize}

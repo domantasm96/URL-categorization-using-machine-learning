@@ -1,0 +1,305 @@
+\theoremstyle{definition}
+\newtheorem{definition}{\keyWordDefinition}
+\newtheorem{example}{\keyWordExample}
+\def\QED{\unskip\nobreak\hfill\kern5pt$\Box$}
+
+\iftoggle{inLithuanian}{
+%\usepackage[L7x]{fontenc}
+\usepackage[english,lithuanian]{babel}
+
+\newcommand{\todayiso}{\the\year \dateseparator \twodigit\month \dateseparator \twodigit\day}
+
+
+\renewcommand{\today}{\number\year\space m. \space \ifcase\month\or
+  sausio\or vasario\or kovo\or balandžio\or gegužės\or birželio\or
+  liepos\or rugpjūčio\or rugsėjo\or spalio\or lapkričio\or
+  gruodžio\fi
+  \space\number\day\space d.}
+
+
+ \usepackage{tocloft}
+ \renewcommand\cftsecaftersnum{.} 
+ \renewcommand\cftsubsecaftersnum{.} 
+ \renewcommand\cftsubsubsecaftersnum{.}
+
+ \usepackage{VUMIFKK}
+
+ \DeclareCaptionLabelFormat{captionlt}{#2 #1}
+   %smth is not fine with algorithms 
+ \DeclareCaptionLabelFormat{captionltalg}{#2 #1 algoritmas}
+
+ \usepackage{indentfirst}
+ \renewcommand{\appendixtocname}{Priedai}
+ \renewcommand{\appendixpagename}{Priedai}
+ \renewcommand{\contentsname}{Turinys} 
+
+ \renewcommand{\lstlistingname}{išeities kodas}
+ \renewcommand{\figurename}{pav}
+ \renewcommand{\tablename}{lentelė}
+
+
+ \captionsetup*[lstlisting]{   
+ labelsep=period,labelformat=captionlt
+ }
+ \captionsetup*[figure]{   
+% labelsep=period,
+ labelsep=space, %babel redefines pav to pav.
+ labelformat=captionlt
+ }
+ \captionsetup*[table]{   
+  labelsep=period,
+  labelformat=captionlt
+ }
+ \renewcommand{\algorithmicrequire}{\textbf{Įvestis:}}
+ \renewcommand{\algorithmicensure}{\textbf{Išvestis:}}
+
+ \captionsetup*[algorithm]{   
+ labelsep=period,labelformat=captionltalg
+ }
+
+\renewcommand{\thmhead}[3]{#2 #1#3}
+
+}
+{
+%\usepackage[OT1,T1]{fontenc}
+%\usepackage[L7x]{fontenc}
+
+\usepackage[english]{babel}
+\newcommand{\todayiso}{\twodigit\month \dateseparator \twodigit\day \dateseparator \the\year}
+ \captionsetup*[algorithm]{   
+ labelsep=period
+ }
+\captionsetup*[lstlisting]{   
+ labelsep=period
+ }
+ \captionsetup*[figure]{   
+ labelsep=period
+ }
+ \captionsetup*[table]{   
+ labelsep=period
+ }
+
+
+}
+
+%some kywords
+%  \def\keywordAbstract{\iftoggle{inLithuanian}{Santrauka}{Abstract}}
+\def\keywordAbstract{\iftoggle{inLithuanian}{Summary}{Abstract}}
+%  \def\keywordAbstractOther{\iftoggle{inLithuanian}{Summary}{Santrauka}}
+ \def\keywordAbstractOther{\iftoggle{inLithuanian}{Santrauka}{Santrauka}}
+  \def\keyWordIntroduction{\iftoggle{inLithuanian}{Introduction}{Introduction}}
+%  \def\keyWordIntroduction{\iftoggle{inLithuanian}{Įvadas}{Introduction}}
+%  \def\keyWordConclusions{\iftoggle{inLithuanian}{Išvados ir rekomendacijos}{Conclusions and Recommendations}}
+ \def\keyWordConclusions{\iftoggle{inLithuanian}{Conclusions and Recommendations}{Conclusions and Recommendations}}
+
+ \def\keyWordPreface{\iftoggle{inLithuanian}{Pratarmė}{Preface}}
+ \def\keyWordAppendice{\iftoggle{inLithuanian}{Priedas}{Appendix}}
+ \def\keyWordSignature{\iftoggle{inLithuanian}{parašas}{signature}}
+ \def\keyWordDefinition{\iftoggle{inLithuanian}{apibrėžimas}{Definition}}
+ \def\keyWordExample{\iftoggle{inLithuanian}{pavyzdys}{Example}}
+
+\newcommand{\bothabstracts}[3]{
+\setcounter{secnumdepth}{0}
+\newpage
+\hspace{2cm}
+{\centering{\section{\keywordAbstract}}}
+
+#1
+\newpage
+\hspace{2cm}
+{\centering \section{\keywordAbstractOther}}
+
+\begin{center}{\textbf{#2} }\end{center}
+
+ #3
+\setcounter{secnumdepth}{3}
+}
+
+ %non-numbered sections: #1 param: for labeling sec:#1, #2 -section title
+\newcommand{\sectionWithoutNumber}[2]{\newpage
+%\hspace{2cm}
+\section*{#1}
+\label{sec:#2}
+\addcontentsline{toc}{section}{\nameref{sec:#2}}%{#3}
+ }
+
+
+
+\newcommand{\referenceSources}[1]{
+\newpage
+\cleardoublepage
+\phantomsection
+% \iftoggle{inLithuanian}{
+%  \renewcommand{\refname}{Literatūros šaltiniai}
+
+%  \addcontentsline{toc}{section}{Literatūros šaltiniai}
+%  \markboth{\refname}{Literatūros šaltiniai}
+%  }
+% {
+
+\iftoggle{inLithuanian}{
+ \renewcommand{\refname}{Literature Sources}
+
+ \addcontentsline{toc}{section}{Literature Sources}
+ \markboth{\refname}{Literature Sources}
+ }
+{
+
+\addcontentsline{toc}{section}{References}
+\markboth{References}{References}
+}
+
+\bibliographystyle{plain}
+\bibliography{#1}
+}
+
+
+
+ \newcommand\authorsignature[1]{
+\begin{flushright}
+ \begin{minipage}[b]{0.45\textwidth}
+  \centering
+  \rule{\textwidth}{0.5pt}\\
+   #1
+  \end{minipage}
+\end{flushright}
+ }
+
+
+
+
+ \newcommand\authorsignatures[5]{%
+   \vspace{1cm}
+   \authorsignature{#1}
+   \ifstrequal{#2}{}{}{\vspace{0.3cm}
+     \authorsignature{#2}
+     \ifstrequal{#3}{}{}{\vspace{0.3cm}
+      \authorsignature{#3}
+      \ifstrequal{#4}{}{}{\vspace{0.3cm}
+        \authorsignature{#4}
+        \ifstrequal{#5}{}{}{\vspace{0.3cm}
+         \authorsignature{#5}       
+        }
+      }
+    }
+} 
+}
+
+\newcommand{\authortitle}{
+\iftoggle{signaturesOnTitlePage}{
+\tiny{\keyWordSignature}
+}{}
+}
+
+\newcommand{\depttitlepage}[8]
+{
+\thispagestyle{empty}
+\begin{center}
+
+\includegraphics[width=2cm]{jb_VU_zenklas}
+
+%\vspace{-1cm}
+
+\iftoggle{inLithuanian}
+{ 
+  VILNIAUS UNIVERSITETAS\\
+  MATEMATIKOS IR INFORMATIKOS FAKULTETAS\\
+  INFORMATIKOS INSTITUTAS\\
+  KOMPIUTERINIO IR DUOMENŲ MODELIAVIMO KATEDRA
+}
+{
+  VILNIUS UNIVERSITY \\
+  FACULTY OF MATHEMATICS AND INFORMATICS \\
+  INSTITUTE OF COMPUTER SCIENCE\\
+  DEPARTMENT OF COMPUTATIONAL AND DATA MODELING
+}
+
+
+\vspace{5cm}
+
+#1\\
+\vspace{0.5cm}
+\textbf{\Large #2}
+\end{center}
+
+\vspace{5cm}
+
+
+\hspace{0.5\textwidth}
+\begin{minipage}{0.4\textwidth}
+ \begin{flushleft} 
+\iftoggle{inLithuanian}
+{
+ \ifstrequal{#3}{}{}{Atliko:\\[5pt]}
+}
+{
+\ifstrequal{#3}{}{}{Done by:\\[5pt]}
+}
+
+%\noindent
+\begin{tabular}{@{}lr}%\setlength\tabcolsep{0pt}
+\ifstrequal{#3}{}{}{#3&\hspace{2cm}\authortitle\\[5pt]}
+\ifstrequal{#4}{}{}{#4&\authortitle\\[5pt]}
+\ifstrequal{#5}{}{}{#5&\authortitle\\[5pt]}
+\ifstrequal{#6}{}{}{#6&\authortitle\\[5pt]}
+\ifstrequal{#7}{}{}{#7&\authortitle\\}
+\end{tabular}
+
+\end{flushleft}
+
+\end{minipage}
+
+\vspace{0.5cm}
+\hspace{0.5\textwidth}
+\begin{minipage}{0.4\textwidth}
+ \begin{flushleft} 
+
+\ifstrequal{#8}{}{}
+{
+
+\iftoggle{inLithuanian}
+{
+Vadovas:
+}
+{
+Supervisor:
+}
+
+#8
+
+}
+
+\end{flushleft}
+
+\end{minipage}
+
+
+\vfill
+
+\begin{center}
+Vilnius\\
+\the\year
+\end{center}
+
+\iftoggle{needPreface}{
+ \sectionWithoutNumber{\keyWordPreface}{preface}
+\input{preface.tex}
+
+\iftoggle{inLithuanian}
+{
+\vspace{\baselineskip}\hfill
+\today
+}
+{
+ \vspace{\baselineskip}\hfill \today
+}
+
+ \vspace{5cm}
+
+\iftoggle{signaturesOnTitlePage}{}
+{
+\authorsignatures{#3}{#4}{#5}{#6}{#7}
+}
+}{}
+\newpage
+}
