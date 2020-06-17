@@ -20,7 +20,12 @@ foo@bar:~$ chmod +x construct_data.sh
 foo@bar:~$ ./construct_data.sh
 ```
 
-Make sure, that all libraries are installed from **requirments.txt** file.
+Make sure, that all libraries are installed from **requirements.txt** file:
+
+```console
+foo@bar:~$ pip install -r requirements.txt
+```
+
 
 ## Predictions
 
