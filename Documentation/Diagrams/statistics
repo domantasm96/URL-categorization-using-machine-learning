@@ -1,0 +1,72 @@
+
+													TOP 2500
+
+1) Tolerance: 30%:	
+
+	LogisticRegression
+	Score:  0.812928855182
+	Top:  2500
+	Tolerance:  30
+	Dataset length:  8390
+
+	DecisionTreeClassifier
+	Score:  0.374864572048
+	Top:  2500
+	Tolerance:  30
+	Dataset length:  8390
+
+2) Tolerance: 35%:
+	
+	LogisticRegression
+	score:  0.839244410177
+	top:  2500
+	tolerance:  35
+	Dataset length: 7589
+
+	DecisionTreeClassifier
+	score:  0.363916730918
+	top:  2500
+	tolerance:  35
+	Dataset length: 7589
+
+3) Tolerance: 40%:
+	
+	LogisticRegression
+	Score:  0.846401286691
+	Top:  2500
+	Tolerance:  40
+	Dataset length:  7536
+
+	DecisionTreeClassifier
+	Score:  0.358665058303
+	Top:  2500
+	Tolerance:  40
+	Dataset length:  7536
+
+4) Tolerance: 45%:
+
+	LogisticRegression
+	Score:  0.838388034898
+	Top:  2500
+	Tolerance:  45
+	Dataset length:  7291
+
+	DecisionTreeClassifier
+	Score:  0.336933942667
+	Top:  2500
+	Tolerance:  45
+	Dataset length:  7291
+
+5) Tolerance 50%:
+
+	LogisticRegression
+	Score:  0.845779938135
+	Top:  2500
+	Tolerance:  50
+	Dataset length:  6857
+
+	DecisionTreeClassifier
+	Score:  0.347326557667
+	Top:  2500
+	Tolerance:  50
+	Dataset length:  6857
