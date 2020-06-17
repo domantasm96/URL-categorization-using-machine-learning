@@ -26,7 +26,7 @@ Make sure, that all libraries are installed from **requirments.txt** file.
 
 In order to predict custom URL categories, **Words Frequency model** should be created and it is located in the **Frequency_models** directory. Usually it is saved in *pickle* format. 
 
-** Words Frequency model for each category ** is created by executing **02_construct_models.py** python script.
+**Words Frequency model for each category** is created by executing **02_construct_models.py** python script.
 
 
 For custom URL predictions I would suggest to use Jupyter-Notebooks/Labs written codes, which are located in:
