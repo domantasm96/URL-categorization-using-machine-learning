@@ -24,7 +24,7 @@ Make sure, that all libraries are installed from **requirments.txt** file.
 
 ## Predictions
 
-In order to predict custom URL categories, **Words Frequency model** should be created and it is located in the ** Frequency_models ** directory. Usually it is saved in *pickle* format. 
+In order to predict custom URL categories, **Words Frequency model** should be created and it is located in the **Frequency_models** directory. Usually it is saved in *pickle* format. 
 
 ** Words Frequency model for each category ** is created by executing **02_construct_models.py** python script.
 
@@ -38,15 +38,17 @@ For custom URL predictions I would suggest to use Jupyter-Notebooks/Labs written
 
 ## Documentation
 
-** Website Classification Using Machine Learning Approaches.pdf ** 
+**Website Classification Using Machine Learning Approaches.pdf** 
 
 
-This project is my Bachelor thesis, so it also has documentation part written with LaTeX. Documentation with original LaTeX files is located in the ** Documentation ** folder.
+This project is my Bachelor thesis, so it also has documentation part written with LaTeX. Documentation with original LaTeX files is located in the **Documentation** folder.
 
 
 ## Contact information
 
-If you have any questions or suggestions related with this project, please contact me directly via linkedin (https://www.linkedin.com/in/domantas-meidus-49089a133/) or raise an issue.
+### Linkedin https://www.linkedin.com/in/domantas-meidus-49089a133/
+
+If you have any questions or suggestions related with this project, please contact me directly via linkedin or raise an issue.
 
 
 Have a good day/night/evening/weekend! 
