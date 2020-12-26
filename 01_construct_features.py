@@ -1,76 +1,57 @@
 import pandas as pd
-import nltk
-import os
 from datetime import datetime
-import requests
-from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import word_tokenize
-from bs4 import BeautifulSoup
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+import config
+import nltk
+import pickle
+from functions import timeit, scrape, parse_request
 
+df = pd.read_csv(config.MAIN_DATASET_PATH)[['url', 'main_category', 'main_category_confidence']]
+df = df[(df['main_category'] != 'Not_working') & (df['main_category_confidence'] >= 0.5)]
+df['url'] = df['url'].apply(lambda x: 'http://' + x)
+df['tld'] = df.url.apply(lambda x: x.split('.')[-1])
+df = df[df.tld.isin(config.TOP_LEVEL_DOMAIN_WHITELIST)].reset_index(drop=True)
+df['tokens'] = ''
 
-def remove_stopwords(tokens):
-    for i, token in enumerate(tokens):
-        tokens[i] = ''.join([ch for ch in token if ch not in char_blacklist])
-    tokens_sw = [w.lower() for w in tokens if w not in stopwords]
-    tokens_lemmatize = [wnl.lemmatize(token) for token in tokens_sw]
-    return tokens_lemmatize
+print("Scraping begins. Start: ", datetime.now())
+with ThreadPoolExecutor(config.THREADING_WORKERS) as executor:
+    start = datetime.now()
+    results = executor.map(scrape, [(i, elem) for i, elem in enumerate(df['url'])])
+exec_1 = timeit(start)
+print('Scraping finished. Execution time: ', exec_1)
 
+print("Analyzing responses. Start: ", datetime.now())
+with ProcessPoolExecutor(config.MULTIPROCESSING_WORKERS) as ex:
+    start = datetime.now()
+    res = ex.map(parse_request, [(i, elem) for i, elem in enumerate(results)])
 
-def scrape(url):
-    print(url[0], url[1])
-    try:
-        return requests.get(url[1], headers=request_headers, timeout=15)
-    except:
-        return ''
+for props in res:
+    i = props[0]
+    tokens = props[1]
+    df.at[i, 'tokens'] = tokens
+exec_2 = timeit(start)
+print('Analyzing responses. Execution time: ', exec_2)
 
+df.to_csv(config.TOKENS_PATH, index=False)
 
-date = datetime.now().strftime("%Y-%m-%d")
-input_path = f'Datasets/url_categorization_dfe.csv'
-output_path = f'Datasets/Feature_dataset_{date}.csv'
+print('Generating words frequency for each category: ', datetime.now())
+start = datetime.now()
+words_frequency = {}
+for category in df.main_category.unique():
+    print(category)
+    all_words = []
+    df_temp = df[df.main_category == category]
+    for word in df_temp.tokens:
+        all_words.extend(word)
+    most_common = [word[0] for word in nltk.FreqDist(all_words).most_common(config.FREQUENCY_TOP_WORDS)]
+    words_frequency[category] = most_common
 
-request_headers = {
-    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-    'Accept-Encoding': 'none',
-    'Accept-Language': 'en-US,en;q=0.8',
-    'Connection': 'keep-alive'}
+# Save words_frequency model
+pickle_out = open(config.WORDS_FREQUENCY_PATH, "wb")
+pickle.dump(words_frequency, pickle_out)
+pickle_out.close()
 
-wnl = WordNetLemmatizer()
-char_blacklist = list(
-    chr(i) for i in range(32, 127) if (i <= 47 or i >= 58) and (i <= 64 or i >= 91) and (i <= 96 or i >= 123))
-stopwords = nltk.corpus.stopwords.words('english')
-stopwords.extend(char_blacklist)
+exec_3 = timeit(start)
+print('Generating words frequency for each category Finished. Execution time: ', exec_3)
 
-if not os.path.isfile(output_path):
-    df = pd.read_csv(input_path)[['url', 'main_category', 'main_category_confidence']]
-    df = df[(df['main_category'] != 'Not_working') & (df['main_category_confidence'] >= 0.5)].reset_index(drop=True)
-    df['url'] = df['url'].apply(lambda x: 'http://' + x)
-    df['tokens'] = ''
-    with ThreadPoolExecutor(16) as executor:
-        start = datetime.now()
-        print("Scraping begins: ", start)
-        results = executor.map(scrape, [(i, elem) for i, elem in enumerate(df['url'].values)])
-    stop = datetime.now()
-    exec_time = stop - start
-    print('Scraping finished. Time: ', exec_time)
-
-    for i, res in enumerate(results):
-        if res != '' and res.status_code == 200:
-            soup = BeautifulSoup(res.text, "html.parser")
-            [tag.decompose() for tag in soup("script")]
-            [tag.decompose() for tag in soup("style")]
-            text = soup.get_text()
-            lines = (line.strip() for line in text.splitlines())
-            chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-            text = '\n'.join(chunk.lower() for chunk in chunks if chunk)
-            # Tokenize text
-            tokens = [token.lower() for token in word_tokenize(text)]
-            # Remove stopwords
-            tokens_lemmatize = remove_stopwords(tokens)
-            df.at[i, 'tokens'] = tokens_lemmatize
-        else:
-            df.at[i, 'tokens'] = ['']
-
-    df.to_csv(output_path, index=False)
+print('Script finished.\nTimes log:\nPart 1: ', exec_1, '\nPart 2: ', exec_2, '\nPart 3: ', exec_3)
