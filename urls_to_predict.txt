@@ -1,0 +1,6 @@
+https://www.bbc.com/
+https://www.youtube.com/
+https://docs.python.org/3/
+https://medium.com/
+https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en
+https://finance.yahoo.com/
