@@ -14,7 +14,6 @@ REQUEST_HEADERS = {
 
 # Paths for datasets and models
 MAIN_DATASET_PATH = f'Datasets/url_categorization_dfe.csv'
-MAIN_DATASET_PATH = f'~/Downloads/crowdflower-url-categorization(1)/crowdflower-url-categorization/data/url_categorization_dfe.csv'
 TOKENS_PATH = f'Datasets/Feature_dataset_{date}.csv'
 WORDS_FREQUENCY_PATH = f"Frequency_models/word_frequency_{date}.picle"
 
