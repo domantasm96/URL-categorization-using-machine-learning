@@ -6,7 +6,10 @@ import nltk
 import pickle
 from functions import timeit, scrape, parse_request
 
-df = pd.read_csv(config.MAIN_DATASET_PATH)[['url', 'main_category', 'main_category_confidence']]
+df = pd.read_csv(config.MAIN_DATASET_PATH)
+df = df.rename(columns={'main_category:confidence': 'main_category_confidence'})
+df = df[['url', 'main_category', 'main_category_confidence']]
+
 df = df[(df['main_category'] != 'Not_working') & (df['main_category_confidence'] >= 0.5)]
 df['url'] = df['url'].apply(lambda x: 'http://' + x)
 df['tld'] = df.url.apply(lambda x: x.split('.')[-1])
