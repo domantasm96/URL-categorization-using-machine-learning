@@ -10,9 +10,12 @@ Main dataset for this project could be found: [URL categorization dataset file](
 
 ## How to start a project
 
-If you are running this project at a first time, all you need is to run **01_construct_features.py** file in order to generate **words_frequency** model for each category.
+If you are running this project at a first time, all you need is:
+- download requirements for nltk module
+- run **01_construct_features.py** file in order to generate **words_frequency** model for each category.
 
 ```console
+foo@bar:~$ python -m nltk.downloader all
 foo@bar:~$ python 01_construct_features.py
 ```
 OR
