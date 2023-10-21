@@ -1,10 +1,12 @@
-import pandas as pd
-from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
-import config
-import nltk
 import pickle
-from functions import timeit, scrape, parse_request
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from datetime import datetime
+
+import nltk
+import pandas as pd
+
+import config
+from functions import parse_request, scrape, timeit
 
 df = pd.read_csv(config.MAIN_DATASET_PATH)
 df = df.rename(columns={'main_category:confidence': 'main_category_confidence'})
