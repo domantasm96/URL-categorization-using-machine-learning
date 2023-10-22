@@ -1,10 +1,10 @@
 from url_predictions.config import TOKENS_PATH, WORDS_FREQUENCY_PATH
-from url_predictions.features import FeaturesExtraction
+from url_predictions.features import FeaturesClass
 from url_predictions.functions import save_to_pickle
 
 
 def main() -> None:
-    features = FeaturesExtraction()
+    features = FeaturesClass()
     features.preprocess_main_dataset()
 
     features.scrape_urls_async_mode()

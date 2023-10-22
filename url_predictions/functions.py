@@ -14,7 +14,10 @@ from url_predictions.config import FREQUENCY_TOP_WORDS, REQUEST_HEADERS, STOPWOR
 wnl = WordNetLemmatizer()
 
 
-def predict_category(words_frequency: dict[str, str], tokens: list[str]) -> Any:
+def predict_category(
+    words_frequency: dict[str, str], html_content: tuple[int | str | None, list[str]]
+) -> dict[str, str | int]:
+    tokens = html_content[1]
     category_weights = []
     for category in words_frequency:
         weight = 0
@@ -32,7 +35,12 @@ def predict_category(words_frequency: dict[str, str], tokens: list[str]) -> Any:
     category_index = category_weights.index(max(category_weights))
     main_category_2 = list(words_frequency.keys())[category_index]
     category_weight_2 = max(category_weights)
-    return main_category, category_weight, main_category_2, category_weight_2
+    return {
+        "main_category": main_category,
+        "category_weight": category_weight,
+        "sub_category": main_category_2,
+        "sub_weight": category_weight_2,
+    }
 
 
 def remove_stopwords(tokens: list[str]) -> list[str]:
@@ -44,11 +52,13 @@ def remove_stopwords(tokens: list[str]) -> list[str]:
     return list(filter(lambda x: len(x) > 1, tokens_list))
 
 
-def scrape_url(url: str) -> str | None:
+def scrape_url(url: str, prediction: bool = False) -> str | None:
     try:
         return requests.get(url, headers=REQUEST_HEADERS, timeout=15).text
     except requests.exceptions.RequestException as e:
         logger.error(e)
+        if prediction:
+            raise e
         return None
 
 
@@ -75,10 +85,10 @@ def fetch_html_content_sync(urls: list[str]) -> str:
     return html_contents
 
 
-def parse_request(res: list[int | str]) -> tuple[int | str, list[str]]:
-    index = res[0]
-    html_content = res[1]
-    if res and html_content:
+def parse_response(response: list[int | str | None]) -> tuple[int | str | None, list[str]]:
+    index = response[0]
+    html_content = response[1]
+    if html_content:
         soup = BeautifulSoup(html_content, "html.parser")
         [tag.decompose() for tag in soup("script")]  # pylint: disable=expression-not-assigned
         [tag.decompose() for tag in soup("style")]  # pylint: disable=expression-not-assigned
@@ -98,3 +108,9 @@ def save_to_pickle(target: Any, output_path: str, write_mode: str) -> None:
 def read_pickle(input_path: str) -> Any:
     with open(input_path, "rb") as pickle_in:
         return pickle.load(pickle_in)
+
+
+def format_url(url: str) -> str:
+    if not re.match("(?:http|ftp|https)://", url):
+        return f"https://{url}"
+    return url
