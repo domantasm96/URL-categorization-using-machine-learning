@@ -27,13 +27,13 @@ jobs:
 
     - name: black
       run: |
-        black url_predictions/
+        poetry run black url_predictions/
     - name: isort
       run: |
-        isort url_predictions/
+        poetry run isort url_predictions/
     - name: mypy
       run: |
-        mypy url_predictions/
+        poetry run mypy url_predictions/
     - name: pylint
       run: |
-        pylint url_predictions/
+        poetry run pylint url_predictions/
