@@ -38,7 +38,7 @@ curl -X 'POST' \
 * _**Use FastAPI UI:**_
   1. Go to `http://localhost:8000/docs`
   2. Expand `/predict/` **POST** endpoint page
-  3. Write url and press `execute`
+  3. Write an url and press `execute`
   4. You should get a JSON response with the results
 
 
