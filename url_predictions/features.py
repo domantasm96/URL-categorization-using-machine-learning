@@ -1,4 +1,4 @@
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
 import nltk
@@ -8,10 +8,9 @@ from url_predictions.config import (
     FREQUENCY_TOP_WORDS,
     MAIN_DATASET_PATH,
     MULTIPROCESSING_WORKERS,
-    THREADING_WORKERS,
     TOP_LEVEL_DOMAIN_WHITELIST,
 )
-from url_predictions.functions import parse_request, scrape
+from url_predictions.functions import fetch_html_content_sync, parse_request, scrape_url
 
 
 class FeaturesExtraction:
@@ -31,22 +30,20 @@ class FeaturesExtraction:
         self.df["tokens"] = ""
 
     def scrape_urls_normal_mode(self) -> None:
-        self.url_responses = [(ind, scrape(url)) for ind, url in enumerate(self.df["url"].to_list())]
+        self.url_responses = [(ind, scrape_url(url)) for ind, url in enumerate(self.df["url"].to_list())]
 
     def analyze_responses_normal_mode(self) -> None:
-        self.html_content = [(ind, parse_request(response)) for ind, response in self.url_responses]
+        self.html_content = [parse_request([ind, response]) for ind, response in enumerate(self.url_responses)]
 
         for ind, tokens in self.html_content:
             self.df.at[ind, "tokens"] = tokens
 
-    def scrape_urls_multithread_mode(self) -> None:
-        with ThreadPoolExecutor(THREADING_WORKERS) as executor:
-            self.url_responses = executor.map(
-                scrape, [(i, elem) for i, elem in enumerate(self.df["url"])]
-            )  # pylint: disable=unnecessary-comprehension
+    def scrape_urls_async_mode(self) -> None:
+        urls = self.df["url"].to_list()
+        self.url_responses = fetch_html_content_sync(urls)
 
     def analyze_responses_multiprocessing_mode(self) -> None:
-        with ProcessPoolExecutor(MULTIPROCESSING_WORKERS) as ex:
+        with ThreadPoolExecutor(MULTIPROCESSING_WORKERS) as ex:
             self.html_content = ex.map(
                 parse_request, [(i, elem) for i, elem in enumerate(self.url_responses)]
             )  # pylint: disable=unnecessary-comprehension

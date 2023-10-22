@@ -1,12 +1,13 @@
+import asyncio
 import pickle
 import re
 from typing import Any
 
+import aiohttp
 import requests
 from bs4 import BeautifulSoup
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-from requests import Response
 
 from url_predictions.config import FREQUENCY_TOP_WORDS, REQUEST_HEADERS, STOPWORDS, logger
 
@@ -43,28 +44,57 @@ def remove_stopwords(tokens: list[str]) -> list[str]:
     return list(filter(lambda x: len(x) > 1, tokens_list))
 
 
-def scrape(url: str) -> Response | str:
+def scrape_url(url: str) -> str | None:
     try:
-        return requests.get(url, headers=REQUEST_HEADERS, timeout=15)
+        return requests.get(url, headers=REQUEST_HEADERS, timeout=15).text
     except requests.exceptions.RequestException as e:
         logger.error(e)
-        return ""
+        return None
 
 
-def parse_request(res: Response) -> list[str]:
-    if res != "" and res.status_code == 200:
-        soup = BeautifulSoup(res.text, "html.parser")
+async def fetch_url(url: str, session: Any) -> str | None:
+    try:
+        async with session.get(url) as response:
+            return await response.text
+    except aiohttp.ClientError as e:
+        logger.error(e)
+        return None
+
+
+async def fetch_html_content_async(urls: list[str]) -> Any:
+    async with aiohttp.ClientSession() as session:
+        tasks = [fetch_url(url, session) for url in urls]
+        html_contents = await asyncio.gather(*tasks)
+        return html_contents
+
+
+def fetch_html_content_sync(urls: list[str]) -> str:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    html_contents = loop.run_until_complete(fetch_html_content_async(urls))
+    return html_contents
+
+
+def parse_request(res: list[int | str]) -> tuple[int | str, list[str]]:
+    index = res[0]
+    html_content = res[1]
+    if res and html_content:
+        soup = BeautifulSoup(html_content, "html.parser")
         [tag.decompose() for tag in soup("script")]  # pylint: disable=expression-not-assigned
         [tag.decompose() for tag in soup("style")]  # pylint: disable=expression-not-assigned
         text = soup.get_text()
         cleaned_text = re.sub("[^a-zA-Z]+", " ", text).strip()
         tokens = word_tokenize(cleaned_text)
         tokens_lemmatize = remove_stopwords(tokens)
-        return tokens_lemmatize
-    return [""]
+        return index, tokens_lemmatize
+    return index, [""]
 
 
 def save_to_pickle(target: Any, output_path: str, write_mode: str) -> None:
-    pickle_out = open(output_path, write_mode)  # pylint: disable=unspecified-encoding, consider-using-with
-    pickle.dump(target, pickle_out)
-    pickle_out.close()
+    with open(output_path, write_mode) as pickle_out:  # pylint: disable=unspecified-encoding
+        pickle.dump(target, pickle_out)
+
+
+def read_pickle(input_path: str) -> Any:
+    with open(input_path, "rb") as pickle_in:
+        return pickle.load(pickle_in)
