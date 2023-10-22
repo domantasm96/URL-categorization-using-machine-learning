@@ -1,0 +1,39 @@
+name: Lints
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry --version
+
+      - name: Install project dependencies
+        run: |
+          poetry install
+
+      - name: Check code formatting
+        run: |
+          black . --check
+          isort --check-only 
+          mypy url_predictions
+          pylint url_predictions

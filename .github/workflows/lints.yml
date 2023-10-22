@@ -1,0 +1,39 @@
+name: Lints
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python -
+      shell: bash
+    - name: Install project dependencies
+      run: |
+        python -m pip install --upgrade pip
+        poetry install
+      working-directory: url_predictions/
+
+    - name: black
+      run: |
+        poetry run black url_predictions/
+    - name: isort
+      run: |
+        poetry run isort url_predictions/
+    - name: mypy
+      run: |
+        poetry run mypy url_predictions/
+    - name: pylint
+      run: |
+        poetry run pylint url_predictions/

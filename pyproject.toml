@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "url-categorization"
+version = "0.1.0"
+description = ""
+authors = ["Domantas <domantasm96@github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+nltk = "~3.8.1"
+numpy = "~1.26.1"
+pandas = "~2.1.1"
+fastapi = {extras = ["all"], version = "~0.104.0"}
+
+[tool.poetry.group.dev.dependencies]
+black = "~23.10.0"
+isort = "~5.12.0"
+mypy = "~1.6.1"
+pylint = "~3.0.1"
+counter = "~1.0.0"
+langdetect = "~1.0.9"
+beautifulsoup4 = "~4.12.2"
+requests = "~2.31.0"
+types-requests = "~2.31.0.10"
+aiohttp = "~3.8.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.pylint.'MASTER']
+extension-pkg-allow-list='pydantic'
+load-plugins = [
+    "pylint.extensions.typing",
+]
+
+[tool.pylint.'FORMAT']
+max-line-length=120
+
+[tool.pylint.'MESSAGES CONTROL']
+min-public-methods=0
+disable=[
+    "missing-docstring",
+    "logging-fstring-interpolation",
+    "import-error"
+]
+
+[tool.pylint.'SIMILARITIES']
+ignore-imports = 'yes'
+
+[tool.mypy]
+ignore_missing_imports = true
+warn_unused_configs = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+explicit_package_bases = true
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+markers = ["dependency"]
