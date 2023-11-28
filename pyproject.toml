@@ -22,7 +22,7 @@ langdetect = "~1.0.9"
 beautifulsoup4 = "~4.12.2"
 requests = "~2.31.0"
 types-requests = "~2.31.0.10"
-aiohttp = "~3.8.6"
+aiohttp = "~3.9.0"
 
 [build-system]
 requires = ["poetry-core"]
