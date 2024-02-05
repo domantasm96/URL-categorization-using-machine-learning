@@ -10,7 +10,7 @@ python = "~3.11"
 nltk = "~3.8.1"
 numpy = "~1.26.1"
 pandas = "~2.1.1"
-fastapi = {extras = ["all"], version = "~0.104.0"}
+fastapi = {extras = ["all"], version = "~0.109.1"}
 
 [tool.poetry.group.dev.dependencies]
 black = "~23.10.0"
